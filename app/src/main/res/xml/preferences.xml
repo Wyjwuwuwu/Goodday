@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <PreferenceCategory-->
+<!--        android:icon="@drawable/ic_baseline_arrow_back_24"-->
+<!--        app:title="                                Setting">-->
+<!--    </PreferenceCategory>-->
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_baseline_build_24"
+        app:title="General">
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/pref_version_list"
+            android:entryValues="@array/pref_version_list"
+            android:key="pref_version"
+            android:summary="Version 1.0"
+            android:title="Version" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/pref_lang_list"
+            android:entryValues="@array/pref_lang_list"
+            android:key="pref_lang"
+            android:summary="Select"
+            android:title="Language/Region" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="Notification">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="allow_notification"
+            android:summary="Enable/Disable"
+            android:title="Allow Notification"
+            app:summaryOff="Disable"
+            app:summaryOn="Enable" />
+        <ListPreference
+            android:defaultValue="3"
+            android:dialogTitle="@string/remind_to_take_medicine"
+            android:entries="@array/pref_remind_me_to_take_medicine"
+            android:entryValues="@array/pref_duration"
+            android:key="remind"
+            android:summary="Add remind"
+            android:title="Remind me to take medicine" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_baseline_manage_accounts_24"
+        app:title="Account">
+        <ListPreference
+            android:key="pref_email"
+            android:summary="davidemail@email.com"
+            android:title="Email" />
+        <ListPreference
+            android:key="pref_number"
+            android:summary="+60134569785"
+            android:title="Contact Number" />
+    </PreferenceCategory>
+
+<!--    <PreferenceCategory-->
+<!--        app:title="Edit Account"-->
+<!--        android:summary="To edit"-->
+<!--        android:icon="@drawable/ic_baseline_arrow_forward_ios_24">-->
+<!--    </PreferenceCategory>-->
+
+<!--    <PreferenceCategory-->
+<!--        app:title="Logout"-->
+<!--        android:icon="@drawable/ic_baseline_logout_24">-->
+<!--    </PreferenceCategory>-->
+
+</PreferenceScreen>
