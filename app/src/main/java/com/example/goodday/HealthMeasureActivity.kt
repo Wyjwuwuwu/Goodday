@@ -1,7 +1,9 @@
 package com.example.goodday
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -23,6 +25,12 @@ class HealthMeasureActivity : AppCompatActivity() {
         setContentView(R.layout.activity_health_measure)
 
         getSupportActionBar()?.hide()
+
+        val back: ImageButton = findViewById<ImageButton>(R.id.ivBackHomeHealthMeasure)
+        back.setOnClickListener {
+            val intent = Intent(this@HealthMeasureActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
         // Recycler view
         symbol_blood = arrayOf(
             R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2

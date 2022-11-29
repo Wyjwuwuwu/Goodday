@@ -1,10 +1,12 @@
 package com.example.goodday
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -34,6 +36,11 @@ class NewsPicTwoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        val video: Button = view.findViewById<Button>(R.id.seeMoreVideo)
+        video.setOnClickListener {
+            val intent = Intent(view.context, VideoActivity::class.java)
+            startActivity(intent)
+        }
         // Recycler view
         image = arrayOf(
             R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2

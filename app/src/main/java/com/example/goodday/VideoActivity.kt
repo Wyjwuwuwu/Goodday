@@ -1,11 +1,9 @@
 package com.example.goodday
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -32,6 +30,11 @@ class VideoActivity : AppCompatActivity() {
 
         getSupportActionBar()?.hide()
 
+        val back: ImageButton = findViewById<ImageButton>(R.id.ivBackHomevideo)
+        back.setOnClickListener {
+            val intent = Intent(this@VideoActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
         setRecycler()
         setSpinner()
     }

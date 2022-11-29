@@ -13,13 +13,6 @@
         android:theme="@style/Theme.Goodday"
         tools:targetApi="31">
         <activity
-            android:name=".OpenInterfaceActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".GlucoseActivity"
             android:exported="false">
             <meta-data
@@ -32,6 +25,11 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+        </activity>
+        <activity
+            android:name=".HealthView"
+            android:exported="true" >
+
         </activity>
         <activity
             android:name=".TreatmentActivity"
@@ -53,13 +51,20 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity> <!-- <activity -->
-        <!-- android:name=".MainActivity" -->
-        <!-- android:exported="false"> -->
-        <!-- <meta-data -->
-        <!-- android:name="android.app.lib_name" -->
-        <!-- android:value="" /> -->
-        <!-- </activity> -->
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".HealthCareActivity"
             android:exported="false">
@@ -91,105 +96,15 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".PasswordUpdatedActivity"
+            android:name=".TrackActivity"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".CreateNewPasswordActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".CheckValidationActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ForgetPasswordActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".EditProfileActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".SettingActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HealthAlertActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ChatInterfaceActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ChatListActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".SignUpActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
+
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
 
-
-        <activity
-            android:name=".SplashScreenActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
     </application>
 
 </manifest>
