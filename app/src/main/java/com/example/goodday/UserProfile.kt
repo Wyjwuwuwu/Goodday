@@ -20,7 +20,7 @@ class UserProfile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_profile)
 
-        drawerLayout = findViewById(R.id.drawer_layout)
+        //drawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
 

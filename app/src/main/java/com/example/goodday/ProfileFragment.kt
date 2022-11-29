@@ -19,26 +19,30 @@ class ProfileFragment : Fragment() {
 
     lateinit var drawerLayout : DrawerLayout
     lateinit var navigationView: NavigationView
-
+    lateinit var toolbar: Toolbar
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val rootView = inflater.inflate(R.layout.fragment_home, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_profile, container, false)
 
         drawerLayout = rootView.findViewById(R.id.drawer_layout)
         navigationView = rootView.findViewById(R.id.nav_view)
-        val toolbar = rootView.findViewById<Toolbar>(R.id.toolbar)
+        toolbar = rootView.findViewById(R.id.toolbar)
 
-        (activity as AppCompatActivity?)!!.setSupportActionBar(toolbar)
+        //val activity = activity as AppCompatActivity
+        //activity.setSupportActionBar(toolbar);
+
+        (activity as AppCompatActivity?)!!.setSupportActionBar(toolbar as Toolbar?)
+        (activity as AppCompatActivity?)!!.supportActionBar?.setDisplayShowTitleEnabled(false);
 
         val menu = navigationView.menu
         menu.findItem(R.id.nav_logout).setVisible(true)
 
         navigationView.bringToFront()
         val toggle = ActionBarDrawerToggle(
-            requireActivity(),
+            activity,
             drawerLayout,
             toolbar,
             R.string.navigation_drawer_open,
@@ -69,24 +73,25 @@ class ProfileFragment : Fragment() {
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
+
         // Inflate the layout for this fragment
         return rootView
     }
 
 
-    fun confirm_logout() {
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setCancelable(true)
-        builder.setTitle("Logout")
-        builder.setMessage("Are you sure you want to logout?")
-        builder.setPositiveButton(
-            "Confirm"
-        ) { dialog, which -> }
-        builder.setNegativeButton(
-            android.R.string.cancel
-        ) { dialog, which -> }
-        val dialog = builder.create()
-        dialog.show()
-    }
+        fun confirm_logout() {
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setCancelable(true)
+            builder.setTitle("Logout")
+            builder.setMessage("Are you sure you want to logout?")
+            builder.setPositiveButton(
+                "Confirm"
+            ) { dialog, which -> }
+            builder.setNegativeButton(
+                android.R.string.cancel
+            ) { dialog, which -> }
+            val dialog = builder.create()
+            dialog.show()
+        }
 
 }
