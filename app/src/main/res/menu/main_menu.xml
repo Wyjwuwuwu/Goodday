@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Health Profile">
+
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_index"
+                        android:icon="@drawable/ic_baseline_priority_high_24"
+                        android:title="Standard for Index" />
+                    <item
+                        android:id="@+id/nav_record"
+                        android:icon="@drawable/ic_baseline_assignment_24"
+                        android:title="Health Measurement Record" />
+
+                </group>
+            </menu>
+        </item>
+
+    <item android:title="Track and Check-in">
+        <menu>
+            <item
+                android:id="@+id/nav_blood_stand"
+                android:icon="@drawable/ic_baseline_assessment_24"
+                android:title="Blood Glucose Standard" />
+
+            <item
+                android:id="@+id/nav_history"
+                android:icon="@drawable/ic_baseline_history_24"
+                android:title="Check in History" />
+
+            <item
+                android:id="@+id/nav_treatment"
+                android:icon="@drawable/ic_baseline_fact_check_24"
+                android:title="Treatment" />
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share" />
+
+            <item
+                android:id="@+id/nav_logbook"
+                android:icon="@drawable/ic_baseline_wysiwyg_24"
+                android:title="Logboook" />
+        </menu>
+    </item>
+
+    <item android:title="Customization">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_setting"
+                    android:icon="@drawable/ic_baseline_settings_24"
+                    android:title="Setting" />
+                <item
+                    android:id="@+id/nav_edit"
+                    android:icon="@drawable/edit"
+                    android:title="Edit Profile" />
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_baseline_logout_24"
+                    android:title="Logout" />
+
+            </group>
+        </menu>
+    </item>
+</menu>
