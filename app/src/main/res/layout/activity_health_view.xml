@@ -132,6 +132,7 @@
                         android:layout_marginBottom="25dp"/>
 
                     <TextView
+                        android:id="@+id/text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Blood glucose level is 7.2/11.4 mmol/L 2022-09-01"
