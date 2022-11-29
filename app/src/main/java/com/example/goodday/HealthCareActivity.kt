@@ -1,8 +1,11 @@
 package com.example.goodday
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.WebView
+import android.widget.ImageButton
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -20,6 +23,14 @@ class HealthCareActivity : AppCompatActivity() {
         setContentView(R.layout.activity_health_care)
 
         getSupportActionBar()?.hide()
+
+
+        val button: ImageButton = findViewById(R.id.ivBackHomeHealthCare)
+        button.setOnClickListener {
+            
+            val intent = Intent(this@HealthCareActivity, TrackActivity::class.java)
+            startActivity(intent)
+        }
 
         // Recycler view
         image_health_care= arrayOf(
