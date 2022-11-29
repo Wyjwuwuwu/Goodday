@@ -28,7 +28,7 @@ class HealthCareActivity : AppCompatActivity() {
         val button: ImageButton = findViewById(R.id.ivBackHomeHealthCare)
         button.setOnClickListener {
             
-            val intent = Intent(this@HealthCareActivity, TrackActivity::class.java)
+            val intent = Intent(this@HealthCareActivity, MainActivity::class.java)
             startActivity(intent)
         }
 

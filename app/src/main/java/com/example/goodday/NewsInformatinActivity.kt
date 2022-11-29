@@ -1,12 +1,11 @@
 package com.example.goodday
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -23,12 +22,18 @@ class NewsInformatinActivity : AppCompatActivity() {
     var latest = arrayOf("1 day", "3 days", "5 days","1 month","3 months")
     var period = arrayOf("30s", "1min", "3min")
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_informatin)
 
         getSupportActionBar()?.hide()
 
+        val back: ImageButton = findViewById<ImageButton>(R.id.ivBackHomeNewsInfo)
+        back.setOnClickListener {
+            val intent = Intent(this@NewsInformatinActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
         setSpinner()
 
 

@@ -20,24 +20,49 @@
         android:id="@+id/homeFragment"
         android:name="com.example.goodday.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_trackActivity"
-            app:destination="@id/trackActivity" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.example.goodday.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_newsPicOneFragment"
+            app:destination="@id/newsPicOneFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_newsPicTwoFragment"
+            app:destination="@id/newsPicTwoFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_newsPicThreeFragment"
+            app:destination="@id/newsPicThreeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.goodday.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/newsPicOneFragment"
+        android:name="com.example.goodday.NewsPicOneFragment"
+        android:label="fragment_news_pic_one"
+        tools:layout="@layout/fragment_news_pic_one">
+        <action
+            android:id="@+id/action_newsPicOneFragment_to_newsInformatinActivity"
+            app:destination="@id/newsInformatinActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsPicTwoFragment"
+        android:name="com.example.goodday.NewsPicTwoFragment"
+        android:label="fragment_news_pic_two"
+        tools:layout="@layout/fragment_news_pic_two" />
+    <fragment
+        android:id="@+id/newsPicThreeFragment"
+        android:name="com.example.goodday.NewsPicThreeFragment"
+        android:label="fragment_news_pic_three"
+        tools:layout="@layout/fragment_news_pic_three" />
     <activity
-        android:id="@+id/trackActivity"
-        android:name="com.example.goodday.TrackActivity"
-        android:label="activity_track"
-        tools:layout="@layout/activity_track" />
+        android:id="@+id/newsInformatinActivity"
+        android:name="com.example.goodday.NewsInformatinActivity"
+        android:label="activity_news_informatin"
+        tools:layout="@layout/activity_news_informatin" />
 </navigation>

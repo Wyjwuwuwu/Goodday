@@ -17,5 +17,11 @@ class HProfileActivity : AppCompatActivity() {
             val intent = Intent(this@HProfileActivity, GlucoseActivity::class.java)
             startActivity(intent)
         }
+        val back: ImageButton = findViewById<ImageButton>(R.id.ivBackHomeHProfile)
+        back.setOnClickListener {
+            val intent = Intent(this@HProfileActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
