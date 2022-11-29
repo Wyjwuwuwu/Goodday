@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/border"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Title"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/icons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/title_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pic1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading"
+        app:layout_constraintVertical_bias="0.2"
+        app:shapeAppearanceOverlay="@style/RoundCorner" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:id="@+id/information"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/title_image"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading" >
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="120dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="10dp"
+            android:text="TextView"
+            android:gravity="center_vertical"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAddress"
+
+            />
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="120dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="TextView"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/title_image"
+            app:layout_constraintStart_toEndOf="@+id/title_image"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/icons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/information"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/navigation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_call_24" />
+        <ImageButton
+            android:id="@+id/call"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_navigation_24" />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
