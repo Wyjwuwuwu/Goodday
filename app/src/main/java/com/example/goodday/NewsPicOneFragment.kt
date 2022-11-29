@@ -1,10 +1,13 @@
 package com.example.goodday
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
@@ -34,6 +37,13 @@ class NewsPicOneFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val news: Button = view.findViewById<Button>(R.id.seeMoreArticle)
+        news.setOnClickListener {
+            val intent = Intent(view.context, NewsInformatinActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
         // Recycler view
