@@ -57,7 +57,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="260dp"
+            android:layout_height="230dp"
             android:orientation="horizontal">
             
             <RelativeLayout
@@ -139,7 +139,7 @@
                         android:textSize="7pt"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="25dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -147,7 +147,7 @@
                         android:text="Pulse Rate is 57 beat/min 2022-09-01"
                         android:textSize="7pt"
                         android:textColor="@color/black"
-                        android:layout_marginBottom="20dp"/>
+                        android:layout_marginBottom="25dp"/>
                 </LinearLayout>
 
                 
@@ -260,7 +260,7 @@
                         android:text="Pulse Rate is 57 beat/min 2022-09-01"
                         android:textSize="7pt"
                         android:textColor="@color/black"
-                        android:layout_marginBottom="10dp"/>
+                        android:layout_marginBottom="20dp"/>
                 </LinearLayout>
 
 
@@ -297,9 +297,9 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_treatment"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:background="@drawable/round_rec_ore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_rec_ora"
                 android:layout_centerInParent="true"/>
 
         </RelativeLayout>
