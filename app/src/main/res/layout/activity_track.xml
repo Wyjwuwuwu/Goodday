@@ -17,9 +17,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:orientation="horizontal">
-        <ImageButton
-            android:id="@+id/ivBackHomeTrack"
-            android:background="@color/white"
+        <ImageView
+            android:id="@+id/ivBackHomeHealthCare"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
@@ -37,13 +36,12 @@
             android:textSize="28dp"
             android:gravity="center"
             android:layout_gravity="center"/>
-        <ImageButton
-            android:id="@+id/question_track"
+        <ImageView
+            android:id="@+id/question_hprofile"
             android:layout_width="32dp"
             android:layout_weight="1"
             android:layout_height="32dp"
             android:layout_gravity="right|center"
-            android:background="@color/white"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:srcCompat="@drawable/ic_baseline_help_24" />

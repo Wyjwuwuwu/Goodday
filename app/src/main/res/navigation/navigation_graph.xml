@@ -20,11 +20,7 @@
         android:id="@+id/homeFragment"
         android:name="com.example.goodday.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_trackActivity"
-            app:destination="@id/trackActivity" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.example.goodday.NewsFragment"
@@ -35,9 +31,4 @@
         android:name="com.example.goodday.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
-    <activity
-        android:id="@+id/trackActivity"
-        android:name="com.example.goodday.TrackActivity"
-        android:label="activity_track"
-        tools:layout="@layout/activity_track" />
 </navigation>
