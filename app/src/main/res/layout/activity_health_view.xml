@@ -13,8 +13,16 @@
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+        android:theme="?attr/actionBarTheme">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#00000000"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="left"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -112,8 +120,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="10dp"
-                    android:layout_marginTop="5dp">
+                    android:padding="5dp"
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -129,7 +137,7 @@
                         android:text="Blood Presure is 120/80 mm Hg 2022-09-01"
                         android:textSize="7pt"
                         android:textColor="@color/black"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="20dp"/>
 
                     <TextView
                         android:id="@+id/text"
@@ -139,15 +147,14 @@
                         android:textSize="7pt"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="20dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Pulse Rate is 57 beat/min 2022-09-01"
                         android:textSize="7pt"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="25dp"/>
+                        android:textColor="@color/black"/>
                 </LinearLayout>
 
 
@@ -235,7 +242,7 @@
                         android:text="Temperature is 35.4 oC 2022-10-1"
                         android:textSize="7pt"
                         android:textColor="@color/black"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="20dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -243,7 +250,7 @@
                         android:text="Blood Presure is 118/80 mm Hg 2022--10-1"
                         android:textSize="7pt"
                         android:textColor="@color/black"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="20dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -276,8 +283,11 @@
             android:background="@color/black"/>
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_rec_ora">
 
             <ImageView
                 android:id="@+id/img1"
@@ -285,7 +295,7 @@
                 android:layout_height="50dp"
                 android:src="@drawable/ic_baseline_add_box_24"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="120dp"/>
+                android:layout_marginLeft="30dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -295,12 +305,12 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/img1"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_treatment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round_rec_ora"
-                android:layout_centerInParent="true"/>
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_treat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="#00000000" />
 
         </RelativeLayout>
 

@@ -168,7 +168,7 @@
                             android:id="@+id/tv_feeling"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/bmi"
+                            android:layout_below="@id/feeling"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
                             android:text="Feeling"
@@ -177,7 +177,7 @@
                             android:textSize="24sp" />
 
                         <ImageView
-                            android:id="@+id/bmi"
+                            android:id="@+id/feeling"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_centerHorizontal="true"
@@ -185,7 +185,7 @@
                             app:srcCompat="@drawable/stethoscope" />
 
                         <Button
-                            android:id="@+id/btn_bmi"
+                            android:id="@+id/btn_feeling"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="#00000000" />
@@ -379,7 +379,7 @@
                             android:text="Treatment"
                             android:textColor="@color/white"
                             android:textStyle="bold"
-                            android:textSize="20sp" />
+                            android:textSize="18sp" />
 
                         <ImageView
                             android:id="@+id/img_treatment"
@@ -457,8 +457,8 @@
                             android:layout_marginTop="20dp"
                             app:srcCompat="@drawable/ic_baseline_accessibility_24" />
 
-                        <Button
-                            android:id="@+id/btn_info"
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_healthcareInfo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="#00000000" />
@@ -499,8 +499,8 @@
                             android:layout_marginTop="20dp"
                             app:srcCompat="@drawable/ic_baseline_aod_24" />
 
-                        <Button
-                            android:id="@+id/btn_careinfo"
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_healthInfo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="#00000000" />
