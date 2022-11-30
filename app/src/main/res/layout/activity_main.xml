@@ -7,9 +7,9 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <include layout = "@layout/title_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+<!--    <include layout = "@layout/title_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
     <fragment
         android:id="@+id/main_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
