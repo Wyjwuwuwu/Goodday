@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".LogbookEdit">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,9 +14,14 @@
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+        android:theme="?attr/actionBarTheme">
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="#00000000"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -665,7 +671,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_track"
+                android:id="@+id/btn_record"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/round_button3"

@@ -11,7 +11,7 @@ class TreatmentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_treatment)
 
         getSupportActionBar()?.hide()
-        val button: ImageButton = findViewById<ImageButton>(R.id.ivReturnArticle)
+        val button: ImageButton = findViewById(R.id.ivReturnArticle)
         button.setOnClickListener {
             val intent = Intent(this@TreatmentActivity, MainActivity::class.java)
             startActivity(intent)

@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
         val btn_feeling = rootView.findViewById<Button>(R.id.btn_feeling)
         val btn_record = rootView.findViewById<Button>(R.id.btn_record)
         val btn_input = rootView.findViewById<Button>(R.id.btn_input)
-        val btn_treatment = rootView.findViewById<Button>(R.id.btn_treatment)
+        val btn_treatment = rootView.findViewById<AppCompatButton>(R.id.btn_treatment)
         val btn_info = rootView.findViewById<AppCompatButton>(R.id.btn_healthInfo)
         val btn_careinfo = rootView.findViewById<AppCompatButton>(R.id.btn_healthcareInfo)
 
@@ -40,17 +40,17 @@ class HomeFragment : Fragment() {
         }
 
         btn_feeling.setOnClickListener {
-            val intent = Intent (activity, HealthView::class.java)
+            val intent = Intent (activity, HProfileActivity::class.java)
             activity?.startActivity(intent)
         }
 
         btn_record.setOnClickListener {
-            val intent = Intent (activity, HealthView::class.java)
+            val intent = Intent (activity, HealthMeasureActivity::class.java)
             activity?.startActivity(intent)
         }
 
         btn_input.setOnClickListener {
-            val intent = Intent (activity, HealthView::class.java)
+            val intent = Intent (activity, TrackActivity::class.java)
             activity?.startActivity(intent)
         }
 
@@ -60,8 +60,8 @@ class HomeFragment : Fragment() {
         }
 
         btn_info.setOnClickListener {
-            val intent = Intent (activity, HealthInfo::class.java)
-            activity?.startActivity(intent)
+            val intent2 = Intent (activity, HealthInfo::class.java)
+            activity?.startActivity(intent2)
         }
 
         btn_careinfo.setOnClickListener {
