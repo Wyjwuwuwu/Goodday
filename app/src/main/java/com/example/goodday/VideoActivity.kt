@@ -18,7 +18,7 @@ import com.example.goodday.databinding.ActivityVideoBinding
 class VideoActivity : AppCompatActivity() {
     private lateinit var VidImageRV: RecyclerView
     private lateinit var VidImageList: ArrayList<VidImageModel>
-
+    private lateinit var vidImageAdapter: VidImageAdapter
     lateinit var VidImage: Array<Int>
     lateinit var VidImageName: Array<String>
     var views = arrayOf("more than 10k", "more than 5k", "more than 1k")
@@ -32,8 +32,7 @@ class VideoActivity : AppCompatActivity() {
 
         val back: ImageButton = findViewById<ImageButton>(R.id.ivBackHomevideo)
         back.setOnClickListener {
-            val intent = Intent(this@VideoActivity, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
         setRecycler()
         setSpinner()
@@ -41,10 +40,14 @@ class VideoActivity : AppCompatActivity() {
     private fun setRecycler(){
         // Recycler view
         VidImage = arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.sport1,R.drawable.sport2,R.drawable.sport3,R.drawable.sport4,R.drawable.sport5
         )
         VidImageName = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "Yoga related health sport introduction",
+            "Check what to do in the gym to loose weight",
+            "Find how many benefits are there when swimming",
+            "What time period is the most suitable for walk and run?",
+            "Dance: A new type of sports nowadays"
         )
         VidImageRV = findViewById<RecyclerView>(R.id.idRVCourses)
         val layoutManager = GridLayoutManager(this, 2)
@@ -59,7 +62,13 @@ class VideoActivity : AppCompatActivity() {
             val vidImage = VidImageModel(VidImageName[i],VidImage[i])
             VidImageList.add(vidImage)
         }
-        VidImageRV.adapter = VidImageAdapter(VidImageList)
+        vidImageAdapter= VidImageAdapter(VidImageList)
+        VidImageRV.adapter = vidImageAdapter
+        vidImageAdapter.onItemClick={
+            val intent = Intent(this,VideoPlayActivity::class.java)
+            intent.putExtra("video",it)
+            startActivity(intent)
+        }
     }
     private fun setSpinner(){
         //spinner

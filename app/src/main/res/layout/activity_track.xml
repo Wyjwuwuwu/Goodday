@@ -1,7 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:orientation="horizontal">
+    <ImageButton
+        android:id="@+id/ivBackHomeTrack"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="3.0dip"
+        android:layout_marginEnd="10dp"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data for Diabetic"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+    <ImageButton
+        android:id="@+id/question_track"
+        android:layout_width="32dp"
+        android:layout_weight="1"
+        android:layout_height="32dp"
+        android:layout_gravity="right|center"
+        android:background="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:srcCompat="@drawable/ic_baseline_help_24" />
+</LinearLayout>
+    <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TrackActivity">
@@ -11,43 +55,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="horizontal">
-        <ImageButton
-            android:id="@+id/ivBackHomeTrack"
-            android:background="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|left"
-            android:layout_marginStart="20dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="3.0dip"
-            android:layout_marginEnd="20dp"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data for Diabetic"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            android:textSize="28dp"
-            android:gravity="center"
-            android:layout_gravity="center"/>
-        <ImageButton
-            android:id="@+id/question_track"
-            android:layout_width="32dp"
-            android:layout_weight="1"
-            android:layout_height="32dp"
-            android:layout_gravity="right|center"
-            android:background="@color/white"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            app:srcCompat="@drawable/ic_baseline_help_24" />
-    </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,17 +65,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/pic1"
+                        android:src="@drawable/circle_ora"
                         />
                     <TextView
                         android:layout_width="match_parent"
@@ -82,7 +89,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="Numerical(mmol/L)"/>
+                    android:hint="Numerical(mmol/L)"
+                    />
 
             </LinearLayout>
             <LinearLayout
@@ -95,10 +103,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/pic1"
+                        android:src="@drawable/circle_ora"
                         />
                     <TextView
                         android:layout_width="match_parent"
@@ -113,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="Numerical(mmol/L)"/>
+                    android:hint="Numerical(mmol/L)"/>
 
             </LinearLayout>
             <LinearLayout
@@ -126,10 +134,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/pic1"
+                        android:src="@drawable/circle_ora"
                         />
                     <TextView
                         android:layout_width="match_parent"
@@ -144,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="Input here (%)"/>
+                    android:hint="Input here (%)"/>
 
             </LinearLayout>
             <LinearLayout
@@ -157,10 +165,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/pic1"
+                    android:src="@drawable/circle_ora"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -175,7 +183,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Input here (mg/dl)"/>
+                android:hint="Input here (mg/dl)"/>
 
         </LinearLayout>
             <ImageView
@@ -197,3 +205,4 @@
     </LinearLayout>
 
 </ScrollView>
+</LinearLayout>

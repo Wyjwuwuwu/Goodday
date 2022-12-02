@@ -28,33 +28,50 @@ class HealthMeasureActivity : AppCompatActivity() {
 
         val back: ImageButton = findViewById<ImageButton>(R.id.ivBackHomeHealthMeasure)
         back.setOnClickListener {
-            val intent = Intent(this@HealthMeasureActivity, MainActivity::class.java)
-            startActivity(intent)
+           finish()
         }
         // Recycler view
         symbol_blood = arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.circle_green,R.drawable.circle_ora,R.drawable.circle_blue,R.drawable.circle_green,R.drawable.circle_green
         )
         intro_blood = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "Blood Presure is normal 2022-09-01",
+            "Blood Presure is quite high 2022-08-24",
+            "Blood Presure is high 2022-08-18",
+            "Blood Presure is normal 2022-08-01",
+            "Blood Presure is normal 2022-07-28"
+
         )
         symbol_glu = arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.circle_blue,R.drawable.circle_ora,R.drawable.circle_blue,R.drawable.circle_green,R.drawable.circle_green
         )
         intro_glu = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "Blood glucose level is high 2022-09-01",
+            "Blood glucose level is high 2022-08-24",
+            "Blood glucose level is high 2022-08-18",
+            "Blood glucose level is high 2022-08-01",
+            "Blood glucose level is high 2022-07-28"
         )
         symbol_puls = arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.circle_ora,R.drawable.circle_ora,R.drawable.circle_blue,R.drawable.circle_green,R.drawable.circle_green
         )
         intro_puls = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "Pulse Rate is a bit slow 2022-09-01",
+            "Pulse Rate is a bit slow 2022-09-01",
+            "Pulse Rate is a bit slow 2022-09-01",
+            "Pulse Rate is a bit slow 2022-09-01",
+            "Pulse Rate is a bit slow 2022-09-01"
         )
         symbol_temp = arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.circle_green,R.drawable.circle_blue,R.drawable.circle_ora,R.drawable.circle_green,R.drawable.circle_green
         )
         intro_temp = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "Temperature is normal 2022-09-01",
+            "Temperature is quite high 2022-08-24",
+            "Temperature is high 2022-08-18",
+            "Temperature is normal 2022-08-01",
+            "Temperature is normal 2022-07-28"
+
         )
         RecyclerView_health_ms = findViewById<RecyclerView>(R.id.recylerView_health_measurement)
         RecyclerView_health_ms.layoutManager = LinearLayoutManager(this)

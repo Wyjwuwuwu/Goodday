@@ -44,16 +44,30 @@ class NewsPicThreeFragment : Fragment() {
         }
         // Recycler view
         image_health_news= arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.hc1,R.drawable.hc2
+            ,R.drawable.hc3
+            ,R.drawable.hc4,R.drawable.hc5
         )
         title_health_news = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "NF Medical Care",
+            "Brighton Healthcare",
+            "HEALTH CARE",
+            "Sungai Pelek Health Care",
+            "Sunway Home Healthcare"
         )
         address_health_news = arrayOf(
-            "author1","author2","author3","author4","author5"
+            "No.2-G, Jalan Nilam",
+            "Persiaran Cyber Point",
+            "L6-07-03, penggawa sekyen 2",
+            "No.71 Jalan Besar, Sungai Pelek",
+            "F-02-11, Sunway GEO Avenue"
         )
         phone_health_news = arrayOf(
-            "11111","11111","11111","11111","11111"
+            "012-2667449",
+            "03-86881898",
+            "012-2634149",
+            "03-50337988",
+            "012-2186549"
         )
         RecyclerView_health_news = view.findViewById<RecyclerView>(R.id.recylerView_health_care_news)
         RecyclerView_health_news.layoutManager = LinearLayoutManager(view.context)
@@ -62,11 +76,11 @@ class NewsPicThreeFragment : Fragment() {
         getUserdata()
         //Create the image slider
         imageList = ArrayList<Int>()
-        imageList = imageList + R.drawable.pic2
-        imageList = imageList + R.drawable.pic1
-        imageList = imageList + R.drawable.pic2
-        imageList = imageList + R.drawable.pic1
-        imageList = imageList + R.drawable.pic2
+        imageList = imageList + R.drawable.newspic1
+        imageList = imageList + R.drawable.newspic2
+        imageList = imageList + R.drawable.newspic3
+        imageList = imageList + R.drawable.newspic4
+        imageList = imageList + R.drawable.newspic5
         viewPagerAdapter = ImageSliderAdapter(view.context,imageList)
         viewPager_pic_three = view.findViewById<ViewPager>(R.id.idViewPager_news_three)
         viewPager_pic_three.adapter = viewPagerAdapter

@@ -9,10 +9,12 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+
 class NewsInformatinActivity : AppCompatActivity() {
 
     // Recycler view
     private lateinit var RecyclerView_news_information: RecyclerView
+    private lateinit var newsAdapter: NewsAdapter
     private lateinit var ArrayList_news_information: ArrayList<NewsModel>
     lateinit var imageId_news_information: Array<Int>
     lateinit var heading_news_information: Array<String>
@@ -31,18 +33,20 @@ class NewsInformatinActivity : AppCompatActivity() {
 
         val back: ImageButton = findViewById<ImageButton>(R.id.ivBackHomeNewsInfo)
         back.setOnClickListener {
-            val intent = Intent(this@NewsInformatinActivity, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
         setSpinner()
 
 
         // Recycler view
         imageId_news_information = arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.newspic1,R.drawable.newspic2,R.drawable.newspic3,R.drawable.newspic4,R.drawable.newspic5
         )
         heading_news_information = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "Legal,ethical concerns of involving children in medical decision",
+            "Health Hacks, things you need to know",
+            "The best health article",
+            "SUMMARY Of health","Flat world health day poster"
         )
         author_news_information = arrayOf(
             "author1","author2","author3","author4","author5"
@@ -58,7 +62,13 @@ class NewsInformatinActivity : AppCompatActivity() {
             val news = NewsModel(imageId_news_information[i],heading_news_information[i],author_news_information[i])
             ArrayList_news_information.add(news)
         }
-        RecyclerView_news_information.adapter = NewsAdapter(ArrayList_news_information)
+        newsAdapter= NewsAdapter(ArrayList_news_information)
+        RecyclerView_news_information.adapter = newsAdapter
+        newsAdapter.onItemClick={
+            val intent = Intent(this,ArticleActivity::class.java)
+            intent.putExtra("news",it)
+            startActivity(intent)
+        }
     }
     private fun setSpinner(){
         //spinner
@@ -121,4 +131,5 @@ class NewsInformatinActivity : AppCompatActivity() {
         }
 
     }
+
 }
