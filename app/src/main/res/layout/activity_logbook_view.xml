@@ -106,14 +106,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="150dp"
         android:layout_margin="20dp"
         android:orientation="vertical"
         android:background="@drawable/round_button5">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:textColor="@color/black"
-                android:textSize="10pt"
+                android:textSize="9pt"
                 android:text="Average"/>
 
             <TextView
@@ -145,7 +145,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp">
@@ -156,7 +156,7 @@
                 android:layout_alignParentLeft="true"
                 android:text="Lowest score"
                 android:textColor="@color/black"
-                android:textSize="10pt" />
+                android:textSize="9pt" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -177,7 +177,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp">
@@ -187,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:textColor="@color/black"
-                android:textSize="10pt"
+                android:textSize="9pt"
                 android:text="Highest score"/>
 
             <TextView
@@ -214,13 +214,14 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_track"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="@drawable/round_button3"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
+        android:textAlignment="center"
         android:text="Tracking Today"
         android:textColor="@color/white"
-        android:textSize="10pt"/>
+        android:textSize="9pt"/>
 
 
 </LinearLayout>

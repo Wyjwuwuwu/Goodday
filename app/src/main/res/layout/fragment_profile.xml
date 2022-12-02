@@ -342,7 +342,7 @@
 
             </RelativeLayout>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <!--com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -350,7 +350,7 @@
                 android:backgroundTint="#f28f3b"
                 android:src="@drawable/ic_baseline_add_24"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="-40dp"/>
+                android:layout_marginTop="-40dp"/-->
 
         </LinearLayout>
     </LinearLayout>

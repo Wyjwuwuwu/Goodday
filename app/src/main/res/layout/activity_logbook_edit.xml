@@ -72,19 +72,20 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_baseline_condition"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_gravity="center_vertical"
+                            android:layout_gravity="center"
                             android:text="Conditions"
                             android:textStyle="bold"
                             android:textSize="8pt"/>
@@ -208,19 +209,20 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_baseline_add_reaction_24"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_gravity="center_vertical"
+                            android:layout_gravity="center"
                             android:text="Emotion"
                             android:textStyle="bold"
                             android:textSize="8pt"/>
@@ -266,19 +268,20 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_baseline_food_bank_24"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_gravity="center_vertical"
+                            android:layout_gravity="center"
                             android:text="Food"
                             android:textStyle="bold"
                             android:textSize="8pt"/>
@@ -382,12 +385,13 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_baseline_health_and_safety_24"/>
 
                         <TextView
@@ -400,17 +404,18 @@
                             android:textSize="8pt"/>
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="10dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_baseline_sync_24"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
+                            android:layout_gravity="center"
                             android:text="（synchronize）"
-                            android:textSize="6pt"/>
+                            android:textSize="5pt"/>
 
                     </LinearLayout>
 
@@ -531,19 +536,20 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_baseline_sports_handball_24"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_gravity="center_vertical"
+                            android:layout_gravity="center"
                             android:text="Activity"
                             android:textStyle="bold"
                             android:textSize="8pt"/>

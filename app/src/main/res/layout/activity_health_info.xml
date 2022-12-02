@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".HealthInfo">
 
@@ -53,10 +54,10 @@
                     android:id="@+id/btn_back"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
-                    android:background="#00000000"
-                    android:src="@drawable/ic_baseline_home_24"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_baseline_home_24"
                     android:layout_toRightOf="@id/linear1"/>
 
                 <ImageView
@@ -321,6 +322,18 @@
                 app:layout_constraintStart_toEndOf="@id/tv_title2"
                 app:layout_constraintTop_toBottomOf="@id/img_line2"/>
 
+            <Button
+                android:id="@+id/btn_article"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:text="See More"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="15dp"
+                android:background="#00000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_title2"
+                app:layout_constraintTop_toBottomOf="@id/img_line2"/>
+
             <LinearLayout
                 android:id="@+id/article_layout"
                 android:layout_width="0dp"
@@ -469,6 +482,17 @@
                 app:layout_constraintStart_toEndOf="@id/tv_Videos"
                 app:layout_constraintTop_toBottomOf="@id/img_line3"/>
 
+            <Button
+                android:id="@+id/btn_video"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="15dp"
+                android:background="#00000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_Videos"
+                app:layout_constraintTop_toBottomOf="@id/img_line3"/>
+
             <LinearLayout
                 android:id="@+id/video_layout"
                 android:layout_width="0dp"
@@ -492,7 +516,7 @@
 
                     <ImageView
                         android:id="@+id/video_view1"
-                        android:src="@drawable/pic2"
+                        android:src="@drawable/healthdiet1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
                 </androidx.cardview.widget.CardView>
@@ -509,7 +533,7 @@
 
                     <ImageView
                         android:id="@+id/video_view2"
-                        android:src="@drawable/pic2"
+                        android:src="@drawable/healthdiet3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
                 </androidx.cardview.widget.CardView>
