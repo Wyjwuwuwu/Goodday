@@ -13,8 +13,7 @@ class GlucoseActivity : AppCompatActivity() {
         getSupportActionBar()?.hide()
         val button: ImageButton = findViewById(R.id.ivBackHomeHealthCare)
         button.setOnClickListener {
-            val intent = Intent(this@GlucoseActivity, TrackActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }

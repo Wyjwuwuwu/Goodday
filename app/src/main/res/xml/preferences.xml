@@ -4,13 +4,15 @@
 
     <PreferenceCategory
 
-        app:title="                          Setting">
+        app:title="                          Setting"
+        >
     </PreferenceCategory>
 
     <PreferenceCategory
         android:icon="@drawable/ic_baseline_build_24"
         app:title="General">
         <ListPreference
+
             android:defaultValue="1"
             android:entries="@array/pref_version_list"
             android:entryValues="@array/pref_version_list"
