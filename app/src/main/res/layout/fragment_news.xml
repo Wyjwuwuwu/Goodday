@@ -28,16 +28,16 @@
             android:text="Welcome back,"
             android:textSize="32dp"
             />
+
         <TextView
             android:id="@+id/username_news"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Emily"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="David"
             android:textSize="32dp"
-            />
+            android:textStyle="bold" />
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
