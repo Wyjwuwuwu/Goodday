@@ -124,44 +124,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/facebook" />
 
-    <Button
-        android:id="@+id/btn_chatlist_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="7dp"
-        android:text="chat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
-
-    <Button
-        android:id="@+id/btn_setting_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="7dp"
-        android:text="setting"
-        app:layout_constraintStart_toEndOf="@+id/btn_chatlist_"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
-
-    <Button
-        android:id="@+id/btn_alert_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="9dp"
-        android:text="Alert"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
-
-    <Button
-        android:id="@+id/btn_editprofile_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="72dp"
-        android:text="Edit Profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

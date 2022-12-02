@@ -58,49 +58,7 @@ class OpenInterfaceActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val btnOpenInterfaceActivityChatList: Button = findViewById<Button>(R.id.btn_chatlist_)
-        btnOpenInterfaceActivityChatList.setOnClickListener {
-            //explicit intent
-            val intent: Intent = Intent(
-                this@OpenInterfaceActivity,
-                ChatListActivity::class.java
-            )
 
-            startActivity(intent)
-        }
-
-        val btnOpenInterfaceActivitySettingActivity: Button = findViewById<Button>(R.id.btn_setting_)
-        btnOpenInterfaceActivitySettingActivity.setOnClickListener {
-            //explicit intent
-            val intent: Intent = Intent(
-                this@OpenInterfaceActivity,
-                SettingActivity::class.java
-            )
-
-            startActivity(intent)
-        }
-
-        val btnOpenInterfaceActivityHealthAlertActivity: Button = findViewById<Button>(R.id.btn_alert_)
-        btnOpenInterfaceActivityHealthAlertActivity.setOnClickListener {
-            //explicit intent
-            val intent: Intent = Intent(
-                this@OpenInterfaceActivity,
-                HealthAlertActivity::class.java
-            )
-
-            startActivity(intent)
-        }
-
-        val btnOpenInterfaceActivityEditProfileActivity: Button = findViewById<Button>(R.id.btn_editprofile_)
-        btnOpenInterfaceActivityEditProfileActivity.setOnClickListener {
-            //explicit intent
-            val intent: Intent = Intent(
-                this@OpenInterfaceActivity,
-                EditProfileActivity::class.java
-            )
-
-            startActivity(intent)
-        }
 
     }
 }
