@@ -37,8 +37,12 @@ class SplashScreenActivity : AppCompatActivity() {
         //Start bottom animation
         slogan.animation = animation2
 
+        val animation3 = AnimationUtils.loadAnimation(this, R.anim.left_right)
+        //Start bottom animation
+        gif.animation = animation3
+
         //load GIF
-        Glide.with(this).load(R.drawable.wait)
+        Glide.with(this).load(R.drawable.photato_move)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(gif)
 
@@ -46,7 +50,7 @@ class SplashScreenActivity : AppCompatActivity() {
             val i = Intent(this@SplashScreenActivity, OpenInterfaceActivity::class.java)
             startActivity(i)
             finish()
-        }, 3000) // delay for 3000 milliseconds or 3 seconds
+        }, 4000) // delay for 3000 milliseconds or 3 seconds
 
         //hide status bar
         @Suppress("DEPRECATION")
