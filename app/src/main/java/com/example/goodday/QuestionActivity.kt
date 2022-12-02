@@ -14,5 +14,12 @@ class QuestionActivity : AppCompatActivity() {
         ques.setOnClickListener {
             finish()
         }
+
+        val home: ImageButton = findViewById(R.id.questionBackHome)
+        home.setOnClickListener {
+            val intent = Intent(this@QuestionActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

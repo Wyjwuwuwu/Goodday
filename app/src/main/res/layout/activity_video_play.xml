@@ -40,7 +40,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/ivBackHomeArticle"
+                android:id="@+id/ivBackHomeVideoPlay"
                 android:background="@color/white"
                 android:layout_width="32dp"
                 android:layout_height="32dp"

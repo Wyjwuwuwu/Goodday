@@ -28,5 +28,12 @@ class VideoPlayActivity : AppCompatActivity() {
         back.setOnClickListener {
             finish()
         }
+        val home: ImageButton = findViewById<ImageButton>(R.id.ivBackHomeVideoPlay)
+        home.setOnClickListener {
+            val intent = Intent(this@VideoPlayActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 }
