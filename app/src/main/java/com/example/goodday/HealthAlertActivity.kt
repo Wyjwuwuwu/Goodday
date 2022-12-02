@@ -1,10 +1,14 @@
 package com.example.goodday
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.ImageView
+import android.widget.TextView
 
 class HealthAlertActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,5 +30,18 @@ class HealthAlertActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         }
+
+//        val btnHealthAlertActivityProfileFragment: View = findViewById<ImageView>(R.id.alert_back)
+//        btnHealthAlertActivityProfileFragment.setOnClickListener {
+//            //explicit intent
+//            val intent: Intent = Intent(
+//                this@HealthAlertActivity,
+//                ProfileFragment::class.java)
+//
+//            startActivity(intent)
+//
+//        }
+
+
     }
 }

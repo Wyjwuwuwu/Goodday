@@ -8,6 +8,7 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.TextView
 import com.example.goodday.databinding.ActivityLoginBinding
 import com.example.goodday.databinding.ActivitySignUpBinding
 
@@ -41,6 +42,17 @@ class SignUpActivity : AppCompatActivity() {
             val intent: Intent = Intent(
                 this@SignUpActivity,
                 OpenInterfaceActivity::class.java)
+
+            startActivity(intent)
+
+        }
+
+        val btnSignUpActivityMainActivity: View = findViewById<TextView>(R.id.btn_continue_to_main)
+        btnSignUpActivityMainActivity.setOnClickListener {
+            //explicit intent
+            val intent: Intent = Intent(
+                this@SignUpActivity,
+                MainActivity::class.java)
 
             startActivity(intent)
 

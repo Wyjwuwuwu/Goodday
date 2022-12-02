@@ -7,11 +7,12 @@
     tools:context=".HealthAlertActivity">
 
     <ImageView
-        android:id="@+id/chat_back"
+        android:id="@+id/alert_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="28dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow" />
@@ -26,7 +27,7 @@
         android:textColor="@color/dark_grey"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/chat_back"
+        app:layout_constraintStart_toEndOf="@+id/alert_back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -36,7 +37,7 @@
         android:layout_marginStart="43dp"
         android:layout_marginTop="43dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chat_back"
+        app:layout_constraintTop_toBottomOf="@+id/alert_back"
         app:srcCompat="@drawable/alert" />
 
     <TextView
@@ -215,7 +216,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
     <TextView
-        android:id="@+id/textView49"
+        android:id="@+id/update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="178dp"

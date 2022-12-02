@@ -13,13 +13,13 @@
         android:paddingTop="20dp"
         android:src="@drawable/goodday" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        app:srcCompat="@drawable/arrow" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView8"-->
+<!--        android:layout_width="32dp"-->
+<!--        android:layout_height="32dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:clickable="true"-->
+<!--        app:srcCompat="@drawable/arrow" />-->
 
 </FrameLayout>

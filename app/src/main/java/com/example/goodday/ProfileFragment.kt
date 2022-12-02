@@ -74,7 +74,10 @@ class ProfileFragment : Fragment() {
                     val intent = Intent(activity, SettingActivity::class.java)
                     activity?.startActivity(intent)
                 }
-                R.id.nav_edit -> {}
+                R.id.nav_edit -> {
+                    val intent = Intent(activity, EditProfileActivity::class.java)
+                    activity?.startActivity(intent)
+                }
                 R.id.nav_logout -> {
                     confirm_logout()
                 }

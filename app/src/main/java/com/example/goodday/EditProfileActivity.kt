@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.TextView
 
 class EditProfileActivity : AppCompatActivity() {
@@ -41,5 +42,7 @@ class EditProfileActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+
     }
 }

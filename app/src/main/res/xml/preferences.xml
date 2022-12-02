@@ -2,10 +2,10 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    <PreferenceCategory-->
-<!--        android:icon="@drawable/ic_baseline_arrow_back_24"-->
-<!--        app:title="                                Setting">-->
-<!--    </PreferenceCategory>-->
+    <PreferenceCategory
+
+        app:title="                          Setting">
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:icon="@drawable/ic_baseline_build_24"
