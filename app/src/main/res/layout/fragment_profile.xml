@@ -69,7 +69,7 @@
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginTop="30dp"
-                android:src="@drawable/profile1" />
+                android:src="@drawable/person" />
 
             <TextView
                 android:id="@+id/fullname_field"
@@ -79,7 +79,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/profile_image"
                 android:includeFontPadding="false"
-                android:text="Taimoor Sikander"
+                android:text="David"
                 android:textColor="#000"
                 android:textSize="20sp" />
 
@@ -88,8 +88,8 @@
                 android:layout_width="60dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
-                android:layout_toRightOf="@id/fullname_field"
-                android:layout_marginLeft="-60dp">
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@id/fullname_field">
 
                 <TextView
                     android:id="@+id/follow"
@@ -270,7 +270,7 @@
                     android:id="@+id/img_profile"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/profile1"/>
+                    android:src="@drawable/person"/>
 
                 <TextView
                     android:id="@+id/tv_username"
@@ -278,7 +278,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="6pt"
                     android:textColor="@color/black"
-                    android:text="Taimoor Sikander"
+                    android:text="David"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/img_profile"/>
 

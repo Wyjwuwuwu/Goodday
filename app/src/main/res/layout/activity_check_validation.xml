@@ -64,15 +64,17 @@
             android:text="Open Email App"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingLeft="2dp"
-            android:paddingTop="10dp"
-            android:textAlignment="center"
-            android:text="Skip, I'll confirm later"
-            android:textColor="@color/dark_grey"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="2dp"
+                android:paddingTop="10dp"
+                android:textAlignment="center"
+                android:text="Skip, I'll confirm later"
+                android:textColor="@color/dark_grey"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
 
         <TextView
             android:layout_width="match_parent"
