@@ -25,7 +25,7 @@ class HealthView : AppCompatActivity() {
         val btn_treat = findViewById<AppCompatImageButton>(R.id.btn_treat)
 
         btn_treat.setOnClickListener {
-            val intent = Intent (this, MainActivity::class.java)
+            val intent = Intent (this, TreatmentActivity::class.java)
             startActivity(intent)
         }
 

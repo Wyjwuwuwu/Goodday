@@ -14,7 +14,7 @@ class HealthInfo : AppCompatActivity() {
         val btn_back = findViewById<AppCompatImageButton>(R.id.btn_back)
 
         btn_back.setOnClickListener {
-            val intent = Intent(this,TreatmentActivity::class.java)
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
     }

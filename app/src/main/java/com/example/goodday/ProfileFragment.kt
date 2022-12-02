@@ -57,14 +57,25 @@ class ProfileFragment : Fragment() {
 
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_index -> {}
+                R.id.nav_index -> {
+                    val intent = Intent (activity, QuestionActivity::class.java)
+                    activity?.startActivity(intent)
+                }
                 R.id.nav_record -> {
+                    val intent = Intent (activity, HealthMeasureActivity::class.java)
+                    activity?.startActivity(intent)
                 }
                 R.id.nav_blood_stand -> {
+                    val intent = Intent (activity, GlucoseActivity::class.java)
+                    activity?.startActivity(intent)
                 }
                 R.id.nav_history -> {
+                    val intent = Intent (activity, HealthView::class.java)
+                    activity?.startActivity(intent)
                 }
                 R.id.nav_treatment -> {
+                    val intent = Intent (activity, TreatmentActivity::class.java)
+                    activity?.startActivity(intent)
                 }
                 R.id.nav_logbook -> {
                     val intent = Intent (activity, LogbookView::class.java)
@@ -74,11 +85,13 @@ class ProfileFragment : Fragment() {
                     val intent = Intent(activity, SettingActivity::class.java)
                     activity?.startActivity(intent)
                 }
-                R.id.nav_edit -> {}
+                R.id.nav_edit -> {
+                    val intent = Intent(activity, EditProfileActivity::class.java)
+                    activity?.startActivity(intent)
+                }
                 R.id.nav_logout -> {
                     confirm_logout()
                 }
-                R.id.nav_share -> {}
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true
@@ -106,7 +119,10 @@ class ProfileFragment : Fragment() {
         builder.setMessage("Are you sure you want to logout?")
         builder.setPositiveButton(
             "Confirm"
-        ) { dialog, which -> }
+        ) { dialog, which ->
+            val intent = Intent (activity, OpenInterfaceActivity::class.java)
+            activity?.startActivity(intent)
+        }
         builder.setNegativeButton(
             android.R.string.cancel
         ) { dialog, which -> }

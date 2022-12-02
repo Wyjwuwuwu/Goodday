@@ -12,8 +12,7 @@ class QuestionActivity : AppCompatActivity() {
         getSupportActionBar()?.hide()
         val ques: ImageButton = findViewById<ImageButton>(R.id.ivBackQuestion)
         ques.setOnClickListener {
-            val intent = Intent(this@QuestionActivity, HProfileActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }
