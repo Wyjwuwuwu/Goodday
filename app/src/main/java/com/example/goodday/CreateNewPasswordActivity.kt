@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageButton
 
 class CreateNewPasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,11 @@ class CreateNewPasswordActivity : AppCompatActivity() {
             )
 
             startActivity(intent)
+        }
+
+        val back : View = findViewById<ImageButton>(R.id.back_to)
+        back.setOnClickListener{
+            finish()
         }
     }
 }

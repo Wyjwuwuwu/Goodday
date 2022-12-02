@@ -15,7 +15,7 @@
         <activity
             android:name=".VideoPlayActivity"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -28,7 +28,7 @@
 
         </activity>
         <activity
-            android:name=".OpenInterfaceActivity"
+            android:name=".MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -164,13 +164,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name="SplashScreenActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".HealthCareActivity"
             android:exported="false">
@@ -217,6 +211,14 @@
         </activity>
         <activity
             android:name=".SettingActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".OpenInterfaceActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
