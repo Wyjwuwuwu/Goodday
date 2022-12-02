@@ -13,12 +13,14 @@ class HealthMSAdapter(private val HealthMSList: ArrayList<HealthMSModel>) :
     class HealthMSHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val symbol_blood: ImageView = itemView.findViewById(R.id.symbol_blood)
         val intro_blood: TextView = itemView.findViewById(R.id.tvIntro_blood)
-        val symbol_glu: ImageView = itemView.findViewById(R.id.symbol_glu)
-        val intro_glu: TextView = itemView.findViewById(R.id.tvIntro_glu)
+        val symbol_shiver: ImageView = itemView.findViewById(R.id.symbol_shiver)
+        val intro_shiver: TextView = itemView.findViewById(R.id.tvIntro_shiver)
         val symbol_temp: ImageView = itemView.findViewById(R.id.symbol_temp)
         val intro_temp: TextView = itemView.findViewById(R.id.tvIntro_temp)
         val symbol_puls: ImageView = itemView.findViewById(R.id.symbol_puls)
         val intro_puls: TextView = itemView.findViewById(R.id.tvIntro_puls)
+        val symbol_pain: ImageView = itemView.findViewById(R.id.symbol_pain)
+        val intro_pain: TextView = itemView.findViewById(R.id.tvIntro_pain)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HealthMSHolder {
@@ -33,10 +35,12 @@ class HealthMSAdapter(private val HealthMSList: ArrayList<HealthMSModel>) :
         holder.intro_puls.text = currentItem.intro_puls
         holder.symbol_temp.setImageResource(currentItem.symbol_temp)
         holder.intro_temp.text = currentItem.intro_temp
-        holder.symbol_glu.setImageResource(currentItem.symbol_glu)
-        holder.intro_glu.text = currentItem.intro_glu
+        holder.symbol_shiver.setImageResource(currentItem.symbol_shiver)
+        holder.intro_shiver.text = currentItem.intro_shiver
         holder.symbol_blood.setImageResource(currentItem.symbol_blood)
         holder.intro_blood.text = currentItem.intro_blood
+        holder.symbol_pain.setImageResource(currentItem.symbol_pain)
+        holder.intro_pain.text = currentItem.intro_pain
     }
 
     override fun getItemCount(): Int {
