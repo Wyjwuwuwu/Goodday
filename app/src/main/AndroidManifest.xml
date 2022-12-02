@@ -13,8 +13,9 @@
         android:theme="@style/Theme.Goodday"
         tools:targetApi="31">
         <activity
-            android:name=".VideoPlayActivity"
-            android:name="SplashScreenActivity"
+            android:name=".VideoPlayActivity"/>
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -164,10 +165,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="SplashScreenActivity"
             android:exported="true">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
