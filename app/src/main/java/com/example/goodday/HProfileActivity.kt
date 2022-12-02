@@ -14,12 +14,17 @@ class HProfileActivity : AppCompatActivity() {
 
         val ques: ImageButton = findViewById<ImageButton>(R.id.question_hprofile)
         ques.setOnClickListener {
-            val intent = Intent(this@HProfileActivity, GlucoseActivity::class.java)
+            val intent = Intent(this@HProfileActivity, QuestionActivity::class.java)
             startActivity(intent)
         }
         val back: ImageButton = findViewById<ImageButton>(R.id.ivBackHomeHProfile)
         back.setOnClickListener {
             val intent = Intent(this@HProfileActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+        val submit: ImageButton = findViewById<ImageButton>(R.id.submit_hprofile)
+        submit.setOnClickListener{
+            val intent = Intent(this@HProfileActivity, HealthMeasureActivity::class.java)
             startActivity(intent)
         }
 

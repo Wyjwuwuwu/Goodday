@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".HealthMeasureActivity">
 
     <LinearLayout
@@ -41,7 +42,7 @@
             android:layout_height="50dp"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="@color/purple_200"
+            android:background="@color/dark_green"
             >
             <TextView
                 android:layout_width="match_parent"
@@ -66,14 +67,14 @@
             android:layout_height="40dp"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="@color/purple_200"
+            android:background="@color/dark_orange"
             >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Health Score(adherence,vitals,compliance)= 80"
-                android:textSize="18dp"/>
+                android:textSize="16dp"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -85,7 +86,7 @@
             android:layout_height="50dp"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="@color/purple_200"
+            android:background="@color/dark_green"
             >
             <TextView
                 android:layout_width="match_parent"
@@ -105,86 +106,90 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp">
             <ImageView
                 android:id="@+id/symbol_temp"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_baseline_analytics_24"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/circle_green"/>
             <TextView
                 android:layout_marginStart="10dp"
                 android:id="@+id/tvIntro_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temperature is normal 2022-09-01"
+                android:text="Temperature is normal"
                 android:textSize="20dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+            <ImageView
+                android:id="@+id/symbol_glu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/circle_green"/>
+            <TextView
+                android:layout_marginStart="10dp"
+                android:id="@+id/tvIntro_glu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blood presure is normal"
+                android:textSize="20dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp">
             <ImageView
                 android:id="@+id/symbol_blood"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_baseline_analytics_24"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/circle_blue"/>
             <TextView
                 android:layout_marginStart="10dp"
                 android:id="@+id/tvIntro_blood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temperature is normal 2022-09-01"
+                android:text="Blood glucose level is normal"
                 android:textSize="20dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp">
-            <ImageView
-                android:id="@+id/symbol_glu"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_baseline_analytics_24"/>
-            <TextView
-                android:id="@+id/tvIntro_glu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Temperature is normal 2022-09-01"
-                android:textSize="20dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp">
             <ImageView
                 android:id="@+id/symbol_puls"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_baseline_analytics_24"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/circle_ora"/>
             <TextView
                 android:id="@+id/tvIntro_puls"
                 android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temperature is normal 2022-09-01"
+                android:text="Pulse rate is a bit slow"
                 android:textSize="20dp"/>
         </LinearLayout>>
         <LinearLayout
             android:layout_height="40dp"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="@color/purple_200"
+            android:background="@color/dark_orange"
             >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Health Score(adherence,vitals,compliance)= 80"
-                android:textSize="18dp"/>
+                android:textSize="16dp"/>
 
         </LinearLayout>
     </LinearLayout>

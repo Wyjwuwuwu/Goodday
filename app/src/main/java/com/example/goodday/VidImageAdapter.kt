@@ -16,6 +16,7 @@ class VidImageAdapter (
 
 ) : RecyclerView.Adapter<VidImageAdapter.VidImageHolder>() {
 
+    var onItemClick:((VidImageModel)-> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VidImageHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.vid_image_item,
@@ -31,6 +32,9 @@ class VidImageAdapter (
         // on below line we are setting data to our text view and our image view.
         holder.VidImageNameTV.text = currentItem.VidImageName
         holder.VidImageIV.setImageResource(currentItem.VidImageImg)
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(currentItem)
+        }
     }
 
     override fun getItemCount(): Int {

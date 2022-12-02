@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             app:collapsedTitleTextColor="@color/white"
-            app:contentScrim="#08298A"
+            app:contentScrim="@color/dark_orange"
             app:expandedTitleGravity="left|bottom"
             app:expandedTitleMarginBottom="5dp"
             app:expandedTitleMarginTop="0dp"

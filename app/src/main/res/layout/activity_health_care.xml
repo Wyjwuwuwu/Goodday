@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".HealthCareActivity">
     <LinearLayout
@@ -45,50 +46,86 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/border"
-        android:gravity="center"
+        android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
+
         android:paddingStart="10dp"
         android:paddingTop="10dp"
         android:paddingEnd="10dp"
         android:paddingBottom="10dp">
 
-        <TextView
-            android:id="@+id/txtView1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Views"
-            android:textSize="20dp" />
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/txtView1" />
+            <TextView
+                android:id="@+id/txtView1"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Views"
+                android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/txtView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Latest"
-            android:textSize="20dp" />
+            <Spinner
+                android:id="@+id/spinner_view"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/txtView1"
+                android:spinnerMode="dialog" />
 
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/txtView1" />
-        <TextView
-            android:id="@+id/txtView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Period"
-            android:textSize="20dp" />
+        </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spinner3"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/txtView1" />
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtView2"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Latest"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/spinner_latest"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/txtView1"
+                android:spinnerMode="dialog" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Period"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/spinner_period"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/txtView1"
+                android:spinnerMode="dialog" />
+        </LinearLayout>
+
 
     </LinearLayout>
 

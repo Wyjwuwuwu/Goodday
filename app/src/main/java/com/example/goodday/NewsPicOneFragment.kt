@@ -19,6 +19,7 @@ class NewsPicOneFragment : Fragment() {
     //Create the image slider
     private lateinit var viewPager_pic_one: ViewPager
     lateinit var viewPagerAdapter: ImageSliderAdapter
+    private lateinit var newsAdapter: NewsAdapter
     lateinit var imageList: List<Int>
 
     // Recycler view
@@ -48,10 +49,13 @@ class NewsPicOneFragment : Fragment() {
 
         // Recycler view
         imageId = arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.newspic1,R.drawable.newspic2,R.drawable.newspic3,R.drawable.newspic4,R.drawable.newspic5
         )
         heading = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "Legal,ethical concerns of involving children in medical decision",
+            "Health Hacks, things you need to know",
+            "The best health article",
+            "SUMMARY Of health","Flat world health day poster"
         )
         author = arrayOf(
             "author1","author2","author3","author4","author5"
@@ -66,11 +70,11 @@ class NewsPicOneFragment : Fragment() {
 
         //Create the image slider
         imageList = ArrayList<Int>()
-        imageList = imageList + R.drawable.pic2
-        imageList = imageList + R.drawable.pic1
-        imageList = imageList + R.drawable.pic2
-        imageList = imageList + R.drawable.pic1
-        imageList = imageList + R.drawable.pic2
+        imageList = imageList + R.drawable.healthdiet1
+        imageList = imageList + R.drawable.healthdiet2
+        imageList = imageList + R.drawable.healthdiet3
+        imageList = imageList + R.drawable.healthdiet4
+        imageList = imageList + R.drawable.healthdiet5
         viewPagerAdapter = ImageSliderAdapter(view.context,imageList)
         viewPager_pic_one = view.findViewById<ViewPager>(R.id.idViewPager)
         viewPager_pic_one.adapter = viewPagerAdapter
@@ -80,7 +84,13 @@ class NewsPicOneFragment : Fragment() {
             val news = NewsModel(imageId[i],heading[i],author[i])
             newArrayList.add(news)
         }
-        newRecyclerView.adapter = NewsAdapter(newArrayList)
+        newsAdapter= NewsAdapter(newArrayList)
+        newRecyclerView.adapter = newsAdapter
+        newsAdapter.onItemClick={
+            val intent = Intent(context,ArticleActivity::class.java)
+            intent.putExtra("news",it)
+            startActivity(intent)
+        }
     }
 
 }

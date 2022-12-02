@@ -10,6 +10,8 @@ import com.google.android.material.imageview.ShapeableImageView
 class NewsAdapter(private val newsList: ArrayList<NewsModel>) :
     RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
+    var onItemClick:((NewsModel)-> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item,
         parent,false)
@@ -21,6 +23,10 @@ class NewsAdapter(private val newsList: ArrayList<NewsModel>) :
         holder.titleImage.setImageResource(currentItem.titleImage)
         holder.tvHeading.text = currentItem.heading
         holder.tvAuthor.text = currentItem.author
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(currentItem)
+        }
     }
 
     override fun getItemCount(): Int {

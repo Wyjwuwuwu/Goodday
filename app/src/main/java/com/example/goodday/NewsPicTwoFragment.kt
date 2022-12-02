@@ -17,6 +17,7 @@ class NewsPicTwoFragment : Fragment() {
     //Create the image slider
     private lateinit var viewPager_pic_two: ViewPager
     lateinit var viewPagerAdapter: ImageSliderAdapter
+    private lateinit var vidImageAdapter: VidImageAdapter
     lateinit var imageList: List<Int>
 
     // Recycler view
@@ -43,10 +44,13 @@ class NewsPicTwoFragment : Fragment() {
         }
         // Recycler view
         image = arrayOf(
-            R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2,R.drawable.pic2
+            R.drawable.sport1,R.drawable.sport2,R.drawable.sport3,R.drawable.sport4,R.drawable.sport5
         )
         imageName = arrayOf(
-            "title1","title2","title3","title4","title5"
+            "Legal,ethical concerns of involving children in medical decision",
+            "Health Hacks, things you need to know",
+            "The best health article",
+            "SUMMARY Of health","Flat world health day poster"
         )
 
         VidImageRV = view.findViewById(R.id.recylerView)
@@ -59,11 +63,13 @@ class NewsPicTwoFragment : Fragment() {
 
         //Create the image slider
         imageList = ArrayList<Int>()
-        imageList = imageList + R.drawable.pic2
-        imageList = imageList + R.drawable.pic1
-        imageList = imageList + R.drawable.pic2
-        imageList = imageList + R.drawable.pic1
-        imageList = imageList + R.drawable.pic2
+        imageList = imageList + R.drawable.sport3
+        imageList = imageList + R.drawable.sport4
+        imageList = imageList + R.drawable.sport2
+        imageList = imageList + R.drawable.sport5
+        imageList = imageList + R.drawable.sport1
+
+
         viewPagerAdapter = ImageSliderAdapter(view.context,imageList)
         viewPager_pic_two = view.findViewById<ViewPager>(R.id.idViewPager)
         viewPager_pic_two.adapter = viewPagerAdapter
@@ -73,7 +79,13 @@ class NewsPicTwoFragment : Fragment() {
             val vidImage = VidImageModel(imageName[i],image[i])
             VidImageList.add(vidImage)
         }
-        VidImageRV.adapter = VidImageAdapter(VidImageList)
+        vidImageAdapter= VidImageAdapter(VidImageList)
+        VidImageRV.adapter = vidImageAdapter
+        vidImageAdapter.onItemClick={
+            val intent = Intent(context,VideoPlayActivity::class.java)
+            intent.putExtra("video",it)
+            startActivity(intent)
+        }
     }
 
 }
