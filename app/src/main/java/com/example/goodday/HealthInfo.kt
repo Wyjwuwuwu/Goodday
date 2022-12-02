@@ -26,7 +26,7 @@ class HealthInfo : AppCompatActivity() {
             startActivity(intent)
         }
         btn_video.setOnClickListener {
-            val intent = Intent(this,NewsInformatinActivity::class.java)
+            val intent = Intent(this,VideoActivity::class.java)
             startActivity(intent)
         }
 

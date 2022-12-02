@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -43,6 +44,7 @@ class NewsFragment : Fragment() {
 
             }
         }.attach()
+
 //        val tabLayout = view.findViewById<TabLayout>(R.id.tabLayout)
 //        newsPicsAdapter = NewsPicsAdapter(this)
 //        viewPager = view.findViewById(R.id.view_pager)

@@ -90,7 +90,7 @@
             android:layout_marginLeft="20dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:text="Good morning, Taimoor Sikander"
+            android:text="Good morning, David"
             android:textSize="10pt"/>
 
         <TextView

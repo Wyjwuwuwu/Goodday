@@ -13,12 +13,16 @@ class TrackActivity : AppCompatActivity() {
         getSupportActionBar()?.hide()
         val button: ImageButton = findViewById<ImageButton>(R.id.ivBackHomeTrack)
         button.setOnClickListener {
-            val intent = Intent(this@TrackActivity, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
         val ques: ImageButton = findViewById<ImageButton>(R.id.question_track)
         ques.setOnClickListener {
             val intent = Intent(this@TrackActivity, GlucoseActivity::class.java)
+            startActivity(intent)
+        }
+        val track: ImageButton = findViewById<ImageButton>(R.id.submit_track)
+        track.setOnClickListener {
+            val intent = Intent(this@TrackActivity, HealthView::class.java)
             startActivity(intent)
         }
 

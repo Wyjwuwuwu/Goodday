@@ -214,9 +214,10 @@
                 android:layout_height="2dp"
                 android:background="@color/black"></View>
             <ImageView
+                android:id="@+id/orange_gif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/pic1"
+                android:src="@drawable/skate_orange"
                 android:layout_marginTop="20dp"/>
 
         </LinearLayout>
