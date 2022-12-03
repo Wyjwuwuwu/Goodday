@@ -8,6 +8,7 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.goodday.databinding.ActivityLoginBinding
@@ -37,16 +38,16 @@ class LoginActivity : AppCompatActivity() {
         }
 
         //back to main screen
-        val btnLoginActivityOpenInterfaceActivity: View = findViewById<ImageView>(R.id.back)
-        btnLoginActivityOpenInterfaceActivity.setOnClickListener {
-            //explicit intent
-            val intent: Intent = Intent(
-                this@LoginActivity,
-                OpenInterfaceActivity::class.java)
-
-            startActivity(intent)
-
-        }
+//        val btnLoginActivityOpenInterfaceActivity: View = findViewById<ImageView>(R.id.back)
+//        btnLoginActivityOpenInterfaceActivity.setOnClickListener {
+//            //explicit intent
+//            val intent: Intent = Intent(
+//                this@LoginActivity,
+//                OpenInterfaceActivity::class.java)
+//
+//            startActivity(intent)
+//
+//        }
 
         //go to forget password screen
         val btnLoginActivityForgetPasswordActivity: View = findViewById<TextView>(R.id.forget_password)
@@ -69,6 +70,11 @@ class LoginActivity : AppCompatActivity() {
 
             startActivity(intent)
 
+        }
+
+        val back : View = findViewById<ImageButton>(R.id.back_to)
+        back.setOnClickListener{
+            finish()
         }
     }
 }
