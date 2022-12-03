@@ -17,22 +17,22 @@
             android:id="@+id/big_photo"
             android:layout_width="66dp"
             android:layout_height="74dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
             app:layout_constraintLeft_toLeftOf="@+id/chat_back"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/person1" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/chat_back"
-            android:visibility="invisible"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="22dp"
             android:layout_marginTop="28dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow" />
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
             android:id="@+id/name"

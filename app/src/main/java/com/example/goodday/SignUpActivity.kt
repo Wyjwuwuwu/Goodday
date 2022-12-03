@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.goodday.databinding.ActivityLoginBinding
@@ -36,16 +37,16 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         //back to main screen
-        val btnSignUpActivityOpenInterfaceActivity: View = findViewById<ImageView>(R.id.back)
-        btnSignUpActivityOpenInterfaceActivity.setOnClickListener {
-            //explicit intent
-            val intent: Intent = Intent(
-                this@SignUpActivity,
-                OpenInterfaceActivity::class.java)
-
-            startActivity(intent)
-
-        }
+//        val btnSignUpActivityOpenInterfaceActivity: View = findViewById<ImageView>(R.id.back)
+//        btnSignUpActivityOpenInterfaceActivity.setOnClickListener {
+//            //explicit intent
+//            val intent: Intent = Intent(
+//                this@SignUpActivity,
+//                OpenInterfaceActivity::class.java)
+//
+//            startActivity(intent)
+//
+//        }
 
         val btnSignUpActivityMainActivity: View = findViewById<TextView>(R.id.btn_continue_to_main)
         btnSignUpActivityMainActivity.setOnClickListener {
@@ -56,6 +57,11 @@ class SignUpActivity : AppCompatActivity() {
 
             startActivity(intent)
 
+        }
+
+        val back : View = findViewById<ImageButton>(R.id.back_to)
+        back.setOnClickListener{
+            finish()
         }
     }
 }

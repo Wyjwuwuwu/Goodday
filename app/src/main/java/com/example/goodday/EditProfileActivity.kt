@@ -8,6 +8,7 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 
 class EditProfileActivity : AppCompatActivity() {
@@ -41,6 +42,16 @@ class EditProfileActivity : AppCompatActivity() {
 
             startActivity(intent)
 
+        }
+
+        val back : View = findViewById<ImageButton>(R.id.back_to)
+        back.setOnClickListener{
+            finish()
+        }
+
+        val update : View = findViewById<Button>(R.id.btn_update)
+        update.setOnClickListener{
+            finish()
         }
 
 

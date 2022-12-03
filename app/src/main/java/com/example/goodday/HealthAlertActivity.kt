@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -43,5 +44,9 @@ class HealthAlertActivity : AppCompatActivity() {
 //        }
 
 
+        val back : View = findViewById<ImageButton>(R.id.alert_back)
+        back.setOnClickListener{
+            finish()
+        }
     }
 }

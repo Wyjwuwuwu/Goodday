@@ -123,6 +123,7 @@
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/tv_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health Profile"
@@ -132,6 +133,14 @@
                 android:layout_marginLeft="-200dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/healthProfile_layout"/>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_profile"
                 app:layout_constraintBottom_toTopOf="@id/healthProfile_layout"/>
 
             <LinearLayout
