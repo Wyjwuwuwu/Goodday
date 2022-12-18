@@ -12,13 +12,14 @@ import com.example.goodday.NewsModel
 import com.example.goodday.R
 import com.example.goodday.databinding.ListItemBinding
 import com.example.goodday.newsInfoModel.NewsArticle
+import com.example.goodday.newsInfoModel.NewsResponse
 import com.google.android.material.imageview.ShapeableImageView
 
 class NewsAdapter(var context: Context, articles: ArrayList<NewsArticle>) :
     RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     private var binding: ListItemBinding? = null
-//    var onItemClick:((NewsModel)-> Unit)? = null
+    var onItemClick:((NewsArticle)-> Unit)? = null
     var articles: ArrayList<NewsArticle>
 
     init {
@@ -43,9 +44,9 @@ class NewsAdapter(var context: Context, articles: ArrayList<NewsArticle>) :
 //        holder.tvHeading.text = currentItem.heading
 //        holder.tvAuthor.text = currentItem.author
 
-//        holder.itemView.setOnClickListener {
-//            onItemClick?.invoke(currentItem)
-//        }
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(this.articles[position]!!)
+        }
     }
 
     override fun getItemCount(): Int {

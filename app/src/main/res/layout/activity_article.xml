@@ -68,9 +68,10 @@
             app:collapsedTitleTextColor="@color/white"
             app:contentScrim="@color/dark_green"
             app:expandedTitleGravity="left|bottom"
+            app:titleCollapseMode="scale"
             app:expandedTitleMarginBottom="5dp"
             app:expandedTitleMarginTop="0dp"
-            app:expandedTitleTextColor="@color/black"
+            app:expandedTitleTextColor="@color/dark_green"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
             app:title="See details">
 
@@ -86,13 +87,13 @@
                     android:id="@+id/classification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="14dp"
                     android:textColor="@color/black"
                     android:text="Chronic Conditions for Older Adults"
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/date"
-                    android:textSize="20dp"
+                    android:textSize="14dp"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -103,7 +104,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textSize="22dp"
+                    android:textSize="18dp"
                     android:text="The Top 10 Most Common Chronic
 Conditions in Older Adults"/>
                 <ImageView
@@ -128,12 +129,43 @@ Conditions in Older Adults"/>
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/article"/>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/article_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/article"/>
+
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

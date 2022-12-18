@@ -24,16 +24,6 @@ class NewsPicOneFragment : Fragment() {
     private lateinit var viewPager_pic_one: ViewPager
     lateinit var viewPagerAdapter: ImageSliderAdapter
     lateinit var imageList: List<Int>
-//    private lateinit var newsAdapter: NewsAdapter
-
-
-//    Recycler view
-//    private lateinit var newRecyclerView: RecyclerView
-//    private lateinit var newArrayList: ArrayList<NewsModel>
-//    lateinit var imageId: Array<Int>
-//    lateinit var heading: Array<String>
-//    lateinit var author: Array<String>
-
 
     private var binding: FragmentNewsPicOneBinding? = null
     var articleArrayList: ArrayList<NewsArticle> = ArrayList<NewsArticle>()
@@ -66,8 +56,45 @@ class NewsPicOneFragment : Fragment() {
         }
         setupRecyclerView()
 
+    //Create the image slider
+        imageList = ArrayList<Int>()
+        imageList = imageList + R.drawable.healthdiet1
+        imageList = imageList + R.drawable.healthdiet2
+        imageList = imageList + R.drawable.healthdiet3
+        imageList = imageList + R.drawable.healthdiet4
+        imageList = imageList + R.drawable.healthdiet5
+        viewPagerAdapter = ImageSliderAdapter(view.context,imageList)
+        viewPager_pic_one = view.findViewById<ViewPager>(R.id.idViewPager)
+        viewPager_pic_one.adapter = viewPagerAdapter
+    }
+    private fun setupRecyclerView() {
+        if (newsAdapter == null) {
+            newsAdapter = view?.let { NewsAdapter(it.context, articleArrayList) }
+            binding?.newsRecylerView?.layoutManager = LinearLayoutManager(requireContext())
+            binding?.newsRecylerView?.adapter = newsAdapter
+            binding?.newsRecylerView?.itemAnimator = DefaultItemAnimator()
+            binding?.newsRecylerView?.isNestedScrollingEnabled = true
+            newsAdapter!!.onItemClick={
+                val intent = Intent(context,ArticleActivity::class.java)
+                intent.putExtra("news", it)
+                startActivity(intent)
+            }
+        } else {
+            newsAdapter!!.notifyDataSetChanged()
+        }
+    }
+    //    private lateinit var newsAdapter: NewsAdapter
 
-        // Recycler view
+
+//    Recycler view
+//    private lateinit var newRecyclerView: RecyclerView
+//    private lateinit var newArrayList: ArrayList<NewsModel>
+//    lateinit var imageId: Array<Int>
+//    lateinit var heading: Array<String>
+//    lateinit var author: Array<String>
+
+
+    // Recycler view
 //        imageId = arrayOf(
 //            R.drawable.newspic1,R.drawable.newspic2,R.drawable.newspic3,R.drawable.newspic4,R.drawable.newspic5
 //        )
@@ -88,28 +115,7 @@ class NewsPicOneFragment : Fragment() {
 
 
 
-        //Create the image slider
-        imageList = ArrayList<Int>()
-        imageList = imageList + R.drawable.healthdiet1
-        imageList = imageList + R.drawable.healthdiet2
-        imageList = imageList + R.drawable.healthdiet3
-        imageList = imageList + R.drawable.healthdiet4
-        imageList = imageList + R.drawable.healthdiet5
-        viewPagerAdapter = ImageSliderAdapter(view.context,imageList)
-        viewPager_pic_one = view.findViewById<ViewPager>(R.id.idViewPager)
-        viewPager_pic_one.adapter = viewPagerAdapter
-    }
-    private fun setupRecyclerView() {
-        if (newsAdapter == null) {
-            newsAdapter = view?.let { NewsAdapter(it.context, articleArrayList) }
-            binding?.newsRecylerView?.layoutManager = LinearLayoutManager(requireContext())
-            binding?.newsRecylerView?.adapter = newsAdapter
-            binding?.newsRecylerView?.itemAnimator = DefaultItemAnimator()
-            binding?.newsRecylerView?.isNestedScrollingEnabled = true
-        } else {
-            newsAdapter!!.notifyDataSetChanged()
-        }
-    }
+
 //    private fun getUserdata(){
 //        for (i in imageId.indices){
 //            val news = NewsModel(imageId[i],heading[i],author[i])

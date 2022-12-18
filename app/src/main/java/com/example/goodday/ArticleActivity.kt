@@ -1,39 +1,45 @@
 package com.example.goodday
 
+import android.app.LauncherActivity.ListItem
 import android.content.Intent
-import android.media.Image
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
+import android.os.Parcelable
+import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.goodday.databinding.ActivityArticleBinding
+import com.example.goodday.newsInfoModel.NewsArticle
+
 
 class ArticleActivity : AppCompatActivity() {
 
-
+    private var binding: ActivityArticleBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_article)
+        binding = ActivityArticleBinding.inflate(layoutInflater)
+        setContentView(binding!!.root)
+
         getSupportActionBar()?.hide()
-
-        val news = intent.getParcelableExtra<NewsModel>("news")
-        if(news!=null)
+//
+        val item = intent.getParcelableExtra<NewsArticle>("news")
+        if(item!=null)
         {
-            val textView: TextView = findViewById(R.id.articleTitle)
-            val imageView: ImageView = findViewById(R.id.ivImageNews)
-            textView.text = news.heading
-            imageView.setImageResource(news.titleImage)
-
+            binding?.articleTitle?.text = item.title.toString()
+            binding?.classification?.text = item.author.toString()
+            binding?.date?.text = item.publishedAt.toString()
+            binding?.articleContent?.text = item.content.toString()
+            binding?.description?.text = item.description.toString()
+            Glide.with(this)
+                .load(item.urlToImage)
+                .apply(RequestOptions.centerCropTransform())
+                .into(binding!!.ivImageNews)
         }
-        val backHome: ImageButton =findViewById<ImageButton>(R.id.ivBackHomeArticle)
-        backHome.setOnClickListener {
+        binding?.ivBackHomeArticle?.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        val back: ImageButton = findViewById<ImageButton>(R.id.ivReturnArticle)
-        back.setOnClickListener {
+        binding?.ivReturnArticle?.setOnClickListener {
             finish()
         }
     }

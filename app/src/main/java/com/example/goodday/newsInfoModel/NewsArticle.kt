@@ -1,10 +1,12 @@
 package com.example.goodday.newsInfoModel
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class NewsArticle(
-    @SerializedName("source")
-    var source: NewsSource? = null,
+//    @SerializedName("source")
+//    var source: NewsSource? = null,
 
     @SerializedName("author")
     var author: String? = null,
@@ -26,4 +28,40 @@ data class NewsArticle(
 
     @SerializedName("content")
     var content: String? = null
-)
+):Parcelable {
+    constructor(parcel: Parcel) : this(
+//        parcel.readParcelable(NewsSource::class.java.classLoader),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(author)
+        parcel.writeString(title)
+        parcel.writeString(description)
+        parcel.writeString(url)
+        parcel.writeString(urlToImage)
+        parcel.writeString(publishedAt)
+        parcel.writeString(content)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<NewsArticle> {
+        override fun createFromParcel(parcel: Parcel): NewsArticle {
+            return NewsArticle(parcel)
+        }
+
+        override fun newArray(size: Int): Array<NewsArticle?> {
+            return arrayOfNulls(size)
+        }
+    }
+}

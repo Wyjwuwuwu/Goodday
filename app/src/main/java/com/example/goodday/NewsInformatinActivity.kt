@@ -1,5 +1,6 @@
 package com.example.goodday
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,7 @@ class NewsInformatinActivity : AppCompatActivity() {
 
     private var binding: ActivityNewsInformatinBinding? = null
     var articleArrayList: ArrayList<NewsArticle> = ArrayList<NewsArticle>()
+//    var article:ArrayList<NewsArticle> = ArrayList<NewsArticle>()
     var newsAdapter: NewsAdapter? = null
     private val newsViewModel: NewsViewModel by viewModels()
 
@@ -26,15 +28,7 @@ class NewsInformatinActivity : AppCompatActivity() {
     var sortBase: String? = ""
     var language: String? = ""
 
-    // Recycler view
-//    private lateinit var RecyclerView_news_information: RecyclerView
-//    private lateinit var newsAdapter: NewsAdapter
-//    private lateinit var ArrayList_news_information: ArrayList<NewsModel>
-//    lateinit var imageId_news_information: Array<Int>
-//    lateinit var heading_news_information: Array<String>
-//    lateinit var author_news_information: Array<String>
-
-    var sortBaseSelect = arrayOf("normal","popularity", "publish time")
+    var sortBaseSelect = arrayOf("normal","popularity", "publishedAt","relevancy")
     var languageSelect = arrayOf("All","Arabic", "German", "English","Spanish","French", "Hebrew", "Italian"
         ,"Dutch","Norwegian", "Portuguese", "Russian","Swedish","Udmurt","Chinese")
     var languageArr = arrayOf("","ar", "de", "en", "es", "fr", "he", "it", "nl",
@@ -65,32 +59,11 @@ class NewsInformatinActivity : AppCompatActivity() {
         binding?.ivSearchButton?.setOnClickListener {
             setSearch()
         }
-        // Recycler view
-//        imageId_news_information = arrayOf(
-//            R.drawable.newspic1,R.drawable.newspic2,R.drawable.newspic3,R.drawable.newspic4,R.drawable.newspic5
-//        )
-//        heading_news_information = arrayOf(
-//            "Legal,ethical concerns of involving children in medical decision",
-//            "Health Hacks, things you need to know",
-//            "The best health article",
-//            "SUMMARY Of health","Flat world health day poster"
-//        )
-//        author_news_information = arrayOf(
-//            "author1","author2","author3","author4","author5"
-//        )
-//        RecyclerView_news_information = findViewById<RecyclerView>(R.id.recylerView_news_information)
-//        RecyclerView_news_information.layoutManager = LinearLayoutManager(this)
-//        RecyclerView_news_information.setHasFixedSize(true)
-//        ArrayList_news_information = arrayListOf<NewsModel>()
-//        getUserdata()
+
     }
     private fun setupRecyclerView() {
         if (newsAdapter == null) {
-            newsAdapter = NewsAdapter(this@NewsInformatinActivity, articleArrayList)
-            binding?.recylerViewNewsInformation?.layoutManager = LinearLayoutManager(this)
-            binding?.recylerViewNewsInformation?.adapter = newsAdapter
-            binding?.recylerViewNewsInformation?.itemAnimator = DefaultItemAnimator()
-            binding?.recylerViewNewsInformation?.isNestedScrollingEnabled = true
+            updateRecyclerView()
         } else {
             newsAdapter!!.notifyDataSetChanged()
         }
@@ -101,6 +74,11 @@ class NewsInformatinActivity : AppCompatActivity() {
         binding?.recylerViewNewsInformation?.adapter = newsAdapter
         binding?.recylerViewNewsInformation?.itemAnimator = DefaultItemAnimator()
         binding?.recylerViewNewsInformation?.isNestedScrollingEnabled = true
+        newsAdapter!!.onItemClick={
+            val intent = Intent(this,ArticleActivity::class.java)
+            intent.putExtra("news", it)
+            startActivity(intent)
+        }
     }
     private fun setSearch(){
         articleArrayList= ArrayList<NewsArticle>()
@@ -116,19 +94,7 @@ class NewsInformatinActivity : AppCompatActivity() {
         binding?.svNewsInfo?.getText()?.clear()
 
     }
-//    private fun getUserdata(){
-//        for (i in imageId_news_information.indices){
-//            val news = NewsModel(imageId_news_information[i],heading_news_information[i],author_news_information[i])
-//            ArrayList_news_information.add(news)
-//        }
-//        newsAdapter= NewsAdapter(ArrayList_news_information)
-//        RecyclerView_news_information.adapter = newsAdapter
-//        newsAdapter.onItemClick={
-//            val intent = Intent(this,ArticleActivity::class.java)
-//            intent.putExtra("news",it)
-//            startActivity(intent)
-//        }
-//    }
+
     private fun setSpinner(){
         //spinner
         val spinner_sortBase = findViewById<Spinner>(R.id.spinner_view)
@@ -197,3 +163,42 @@ class NewsInformatinActivity : AppCompatActivity() {
     }
 
 }
+// Recycler view
+//    private lateinit var RecyclerView_news_information: RecyclerView
+//    private lateinit var newsAdapter: NewsAdapter
+//    private lateinit var ArrayList_news_information: ArrayList<NewsModel>
+//    lateinit var imageId_news_information: Array<Int>
+//    lateinit var heading_news_information: Array<String>
+//    lateinit var author_news_information: Array<String>
+
+// Recycler view
+//        imageId_news_information = arrayOf(
+//            R.drawable.newspic1,R.drawable.newspic2,R.drawable.newspic3,R.drawable.newspic4,R.drawable.newspic5
+//        )
+//        heading_news_information = arrayOf(
+//            "Legal,ethical concerns of involving children in medical decision",
+//            "Health Hacks, things you need to know",
+//            "The best health article",
+//            "SUMMARY Of health","Flat world health day poster"
+//        )
+//        author_news_information = arrayOf(
+//            "author1","author2","author3","author4","author5"
+//        )
+//        RecyclerView_news_information = findViewById<RecyclerView>(R.id.recylerView_news_information)
+//        RecyclerView_news_information.layoutManager = LinearLayoutManager(this)
+//        RecyclerView_news_information.setHasFixedSize(true)
+//        ArrayList_news_information = arrayListOf<NewsModel>()
+//        getUserdata()
+//    private fun getUserdata(){
+//        for (i in imageId_news_information.indices){
+//            val news = NewsModel(imageId_news_information[i],heading_news_information[i],author_news_information[i])
+//            ArrayList_news_information.add(news)
+//        }
+//        newsAdapter= NewsAdapter(ArrayList_news_information)
+//        RecyclerView_news_information.adapter = newsAdapter
+//        newsAdapter.onItemClick={
+//            val intent = Intent(this,ArticleActivity::class.java)
+//            intent.putExtra("news",it)
+//            startActivity(intent)
+//        }
+//    }

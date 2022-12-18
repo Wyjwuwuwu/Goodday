@@ -10,8 +10,8 @@ class NewsViewModel : ViewModel() {
     private var mutableLiveData: MutableLiveData<NewsResponse>? = null
     private var newsRepository: NewsRepository? = null
     private val sources = ""
-    private val API_KEY = "6912a61c8aa64e7097a552c45d91c73b"
-//    00c772ed92f04fa3a13593f5d0204132
+    private val API_KEY = "00c772ed92f04fa3a13593f5d0204132"
+//    6912a61c8aa64e7097a552c45d91c73b
     fun initActivity(searchWord: String?,sortBase: String?,language:String?) {
         if (mutableLiveData != null) {
             return
