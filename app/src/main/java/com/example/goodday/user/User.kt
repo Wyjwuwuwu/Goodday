@@ -5,7 +5,6 @@ class User {
     lateinit var fullName: String
     lateinit var email:String
     lateinit var uid :String
-    lateinit var healthScore :Number
 
     constructor(){
 

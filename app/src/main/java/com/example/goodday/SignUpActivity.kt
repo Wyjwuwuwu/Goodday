@@ -102,7 +102,6 @@ class SignUpActivity : AppCompatActivity() {
 
                         startActivity(intent)
 
-
                     }else{
                         Toast.makeText(this, "test2_failed", Toast.LENGTH_SHORT).show()
                     }
