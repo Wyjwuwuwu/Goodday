@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    tools:context=".LogbookEdit">
+    tools:context=".LogbookUpdate">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -79,128 +79,90 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_baseline_condition"/>
+                            android:src="@drawable/ic_baseline_condition" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
                             android:text="Conditions"
-                            android:textStyle="bold"
-                            android:textSize="8pt"/>
+                            android:textSize="8pt"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="15dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
-                            android:layout_gravity="center_vertical"
                             android:text="Weather"
-
                             android:textColor="@color/black"
-                            android:textSize="8pt"/>
+                            android:textSize="8pt" />
 
-                        <TextView
-                            android:id="@+id/tv_weather"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:visibility="visible"
-                            android:text="Sunny"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_weather"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
+                            android:layout_gravity="end"
                             android:textDirection="rtl"
-                            android:layout_gravity="end"/>
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="15dp">
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
                             android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
                             android:text="Air Temperature"
                             android:textColor="@color/black"
-                            android:textSize="8pt"/>
+                            android:textSize="8pt" />
 
-                        <TextView
-                            android:id="@+id/tv_airT"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:visibility="visible"
-                            android:gravity="end"
-                            android:text="32℃"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_airT"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
-                            android:textDirection="rtl"
-                            android:layout_gravity="end"/>
+                            android:layout_gravity="end"
+                            android:textDirection="rtl" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="15dp">
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
                             android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
                             android:text="Water Temperature"
                             android:textColor="@color/black"
-                            android:textSize="8pt"/>
+                            android:textSize="8pt" />
 
-                        <TextView
-                            android:id="@+id/tv_wTemp"
-                            android:visibility="visible"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:text="27℃"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_wTemp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
-                            android:textDirection="rtl"
-                            android:layout_gravity="end"/>
+                            android:layout_gravity="end"
+                            android:textDirection="rtl" />
 
 
                     </LinearLayout>
@@ -238,7 +200,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -250,25 +212,12 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_feeling"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
-
-                        <TextView
-                            android:id="@+id/tv_feeling"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:visibility="visible"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
 
 
                     </LinearLayout>
@@ -305,7 +254,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -317,31 +266,19 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_bre"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
-                        <TextView
-                            android:id="@+id/tv_bre"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:visibility="visible"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -353,33 +290,19 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_lun"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
-
-                        <TextView
-                            android:id="@+id/tv_lun"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:visibility="visible"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
 
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -391,27 +314,12 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_din"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
-
-                        <TextView
-                            android:id="@+id/tv_din"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:visibility="visible"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-
 
                     </LinearLayout>
 
@@ -461,7 +369,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal"
                         android:layout_marginBottom="15dp">
 
@@ -474,31 +382,19 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_bT"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
-                        <TextView
-                            android:id="@+id/tv_bT"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:visibility="visible"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal"
                         android:layout_marginBottom="15dp">
 
@@ -511,22 +407,10 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <TextView
-                            android:id="@+id/tv_bP"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:text=" 120/80mmHg"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_bP"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
@@ -535,7 +419,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal"
                         android:layout_marginBottom="15dp">
 
@@ -548,22 +432,10 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <TextView
-                            android:id="@+id/tv_bG"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:text="6.1mmol/L"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_bG"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
@@ -572,7 +444,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -584,22 +456,10 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <TextView
-                            android:id="@+id/tv_pul"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:text="80t/min"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_pul"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
@@ -638,7 +498,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -650,22 +510,10 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <TextView
-                            android:id="@+id/tv_sle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:text="80t/min"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_sle"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
@@ -674,7 +522,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -686,22 +534,10 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <TextView
-                            android:id="@+id/tv_exe"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:text="80t/min"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_exe"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
@@ -709,7 +545,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -721,22 +557,10 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <TextView
-                            android:id="@+id/tv_fun"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:text="80t/min"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_fun"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
@@ -744,7 +568,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -756,22 +580,10 @@
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
-                        <TextView
-                            android:id="@+id/tv_wor"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="end"
-                            android:text="80t/min"
-                            android:textColor="@color/black"
-                            android:textSize="8pt"/>
-
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/et_wor"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:visibility="gone"
                             android:textDirection="rtl"
                             android:layout_gravity="end"/>
 
@@ -782,12 +594,12 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_record"
+                android:id="@+id/btn_update"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/round_button3"
                 android:layout_margin="30dp"
-                android:text="Record"
+                android:text="Update"
                 android:textColor="@color/white"
                 android:textSize="10pt"/>
 

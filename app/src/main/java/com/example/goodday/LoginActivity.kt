@@ -7,19 +7,27 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.example.goodday.databinding.ActivityLoginBinding
 import com.example.goodday.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     //var binding: ActivityLoginBinding? = null
+    private lateinit var email: EditText
+    private lateinit var password: EditText
+
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        email = findViewById(R.id.email)
+        password = findViewById(R.id.password)
+
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance()
 
         //hide action bar
         if (supportActionBar != null) {
@@ -63,12 +71,7 @@ class LoginActivity : AppCompatActivity() {
 
         val btnLoginActivityMainActivity: View = findViewById<TextView>(R.id.btn_continue)
         btnLoginActivityMainActivity.setOnClickListener {
-            //explicit intent
-            val intent: Intent = Intent(
-                this@LoginActivity,
-                MainActivity::class.java)
-
-            startActivity(intent)
+            userLogin()
 
         }
 
@@ -77,4 +80,25 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
     }
+
+    private fun userLogin(){
+        val email: String = email.text.toString().trim()
+        val password: String = password.text.toString().trim()
+
+        mAuth.signInWithEmailAndPassword(email,password)
+            .addOnCompleteListener{ task ->
+                if(task.isSuccessful){
+                    //explicit intent
+                    val intent: Intent = Intent(
+                        this@LoginActivity,
+                        MainActivity::class.java)
+
+                    startActivity(intent)
+                }else{
+                    Toast.makeText(this, "login failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+
 }

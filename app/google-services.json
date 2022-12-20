@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "235461344698",
+    "project_id": "goodday-95a9e",
+    "storage_bucket": "goodday-95a9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235461344698:android:c5ecea2e8c9cb3c26c7183",
+        "android_client_info": {
+          "package_name": "com.example.goodday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235461344698-put129k95j1k11b7r60bbbj5gkana8kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCabwV5qqaldOJxb4S_6jmdSLOXLli0xpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235461344698-put129k95j1k11b7r60bbbj5gkana8kj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
