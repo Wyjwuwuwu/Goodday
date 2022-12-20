@@ -10,7 +10,7 @@
     android:layout_marginBottom="10dp"
     android:background="@drawable/border">
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageView
         android:id="@+id/title_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
