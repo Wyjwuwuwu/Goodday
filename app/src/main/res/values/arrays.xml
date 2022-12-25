@@ -15,4 +15,19 @@
         <item>1.0</item>
     </string-array>
 
+    <string-array name="pref_font_list">
+        <item>Roboto</item>
+        <item>Times New Roman</item>
+    </string-array>
+
+    <string-array name="night_mode">
+        <item>@string/night_mode_auto</item>
+        <item>@string/night_mode_on</item>
+        <item>@string/night_mode_off</item>
+    </string-array>
+    <string-array name="night_mode_value">
+        <item>@string/pref_night_auto</item>
+        <item>@string/pref_night_on</item>
+        <item>@string/pref_night_off</item>
+    </string-array>
 </resources>

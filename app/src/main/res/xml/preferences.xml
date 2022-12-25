@@ -48,19 +48,37 @@
             android:key="remind"
             android:summary="Add remind"
             android:title="Remind me to take medicine" />
+
+        <SeekBarPreference
+            android:key="volume"
+            app:title="volume"
+            app:showSeekBarValue="true"
+            app:defaultValue="50"/>
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:icon="@drawable/ic_baseline_manage_accounts_24"
-        app:title="Account">
+        android:icon="@drawable/ic_baseline_looks_24"
+        app:title="Appearance">
+
         <ListPreference
-            android:key="pref_email"
-            android:summary="davidemail@email.com"
-            android:title="Email" />
+            android:defaultValue="@string/pref_night_auto"
+            android:dialogTitle="@string/pref_night_dialog"
+            android:entries="@array/night_mode"
+            android:entryValues="@array/night_mode_value"
+            app:key="@string/pref_key_night"
+            app:summary="@string/pref_night_summary"
+            app:title="@string/pref_night_title" />
+
+
+
         <ListPreference
-            android:key="pref_number"
-            android:summary="+60134569785"
-            android:title="Contact Number" />
+            android:defaultValue="1"
+            android:entries="@array/pref_font_list"
+            android:entryValues="@array/pref_font_list"
+            android:key="pref_font"
+            android:summary="Font Style"
+            android:title="Font" />
+
     </PreferenceCategory>
 
 <!--    <PreferenceCategory-->
