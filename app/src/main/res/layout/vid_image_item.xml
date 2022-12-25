@@ -19,7 +19,7 @@
 
         <!--on below line we are creating
             a simple image view-->
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/idIVImage"
             android:layout_width="180dp"
             android:layout_height="180dp"

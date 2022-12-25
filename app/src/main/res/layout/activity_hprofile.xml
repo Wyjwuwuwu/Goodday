@@ -84,14 +84,12 @@
                     android:text="Very Low -Normal- Very Fast"/>
 
                 <RadioGroup
-                    android:id="@+id/temGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:orientation="horizontal">
                     <RadioButton
-                        android:id="@+id/temp1"
                         android:layout_height="wrap_content"
                         android:layout_width="60dp"
                         android:gravity="center"
@@ -104,7 +102,6 @@
                         android:elevation="4dp"
                         android:padding="16dp"/>
                     <RadioButton
-                        android:id="@+id/temp2"
                         android:layout_width="60dp"
                         android:gravity="center"
                         android:layout_marginStart="10dp"
@@ -117,7 +114,6 @@
                         android:elevation="4dp"
                         android:padding="16dp"/>
                     <RadioButton
-                        android:id="@+id/temp3"
                         android:layout_width="60dp"
                         android:gravity="center"
                         android:layout_height="wrap_content"
@@ -130,7 +126,6 @@
                         android:elevation="4dp"
                         android:padding="16dp"/>
                     <RadioButton
-                        android:id="@+id/temp4"
                         android:layout_width="60dp"
                         android:gravity="center"
                         android:layout_height="wrap_content"
@@ -143,7 +138,6 @@
                         android:elevation="4dp"
                         android:padding="16dp"/>
                     <RadioButton
-                        android:id="@+id/temp5"
                         android:layout_width="60dp"
                         android:gravity="center"
                         android:layout_height="wrap_content"
@@ -189,7 +183,6 @@
                     android:text="Very Low -Normal- Very Fast"/>
 
                 <RadioGroup
-                    android:id="@+id/bloGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -288,7 +281,6 @@
                     android:text="Severe -Normal- Severe"/>
 
                 <RadioGroup
-                    android:id="@+id/shiGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -387,7 +379,6 @@
                     android:text="Dyspnea -Polypnea-Normal- Little Pain- Pain"/>
 
                 <RadioGroup
-                    android:id="@+id/breGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -487,7 +478,6 @@
                     android:text="Very Low -Normal- Very Fast"/>
 
                 <RadioGroup
-                    android:id="@+id/pulsGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
