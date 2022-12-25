@@ -11,7 +11,10 @@ class Logbook {
     lateinit var dinner:String
     lateinit var tempB:String
     lateinit var presB:String
-    lateinit var glucB:String
+    lateinit var glucBf:String
+    lateinit var glucBt:String
+    lateinit var gly:String
+    lateinit var ur:String
     lateinit var pulse:String
     lateinit var sleep:String
     lateinit var execise:String
@@ -31,7 +34,10 @@ class Logbook {
                 dinner:String,
                 tempB:String,
                 presB:String,
-                glucB:String,
+                glucBf:String,
+                glucBt:String,
+                Gly:String,
+                Ur:String,
                 pulse:String,
                 sleep:String,
                 execise:String,
@@ -46,7 +52,10 @@ class Logbook {
         this.lunch = lunch
         this.dinner = dinner
         this.tempB = tempB
-        this.glucB = glucB
+        this.glucBf = glucBf
+        this.glucBt = glucBt
+        this.gly = Gly
+        this.ur = Ur
         this.presB = presB
         this.pulse = pulse
         this.sleep = sleep

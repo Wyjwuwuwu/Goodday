@@ -49,6 +49,7 @@
                 android:background="#f28f3b">
 
                 <TextView
+                    android:id="@+id/tv_date"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="May 12, 2022"
@@ -60,6 +61,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/logbook_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -443,20 +445,6 @@
                             android:textStyle="bold"
                             android:textSize="8pt"/>
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_baseline_sync_24"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="（synchronize）"
-                            android:textSize="5pt"/>
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -544,12 +532,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_gravity="center_vertical"
-                            android:text="Blood Glucose"
+                            android:text="Blood Glucose (fast)"
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
                         <TextView
-                            android:id="@+id/tv_bG"
+                            android:id="@+id/tv_bGf"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -569,6 +557,93 @@
 
 
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="Blood Glucose (2 hours)"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+                        <TextView
+                            android:id="@+id/tv_bGt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="end"
+                            android:text="6.1mmol/L"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="Glycosylated Hemoglobin"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+                        <TextView
+                            android:id="@+id/tv_gly"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="end"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="Urine Ket Purity"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+                        <TextView
+                            android:id="@+id/tv_uri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="end"
+                            android:text="6.1mmol/L"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+
+                    </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -778,6 +853,24 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/not_show"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="450dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:textAlignment="center"
+                    android:textSize="12pt"
+                    android:text="Record your health logbook today!"/>
 
             </LinearLayout>
 

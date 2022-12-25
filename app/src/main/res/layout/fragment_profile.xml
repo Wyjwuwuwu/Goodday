@@ -255,104 +255,140 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="15dp">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp">
 
-                <ImageView
-                    android:id="@+id/img_profile"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/person"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/person"/>
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="6pt"
+                        android:textColor="@color/black"
+                        android:text="David"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/img_profile"/>
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="May 12, 2022，6：55 PM"
+                        android:textSize="5pt"
+                        android:layout_marginLeft="12dp"
+                        android:layout_toRightOf="@id/img_profile"
+                        android:layout_below="@id/tv_username"/>
+
+
+
+
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/tv_username"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="6pt"
-                    android:textColor="@color/black"
-                    android:text="David"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/img_profile"/>
-
-                <TextView
-                    android:id="@+id/tv_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="May 12, 2022，6：55 PM"
-                    android:textSize="5pt"
-                    android:layout_marginLeft="12dp"
-                    android:layout_toRightOf="@id/img_profile"
-                    android:layout_below="@id/tv_username"/>
-
-
-
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Welcome to Goodday."
-                android:textSize="8pt"
-                android:padding="10dp"
-                android:textColor="@color/black"/>
-
-            <RelativeLayout
-                android:layout_width="300dp"
-                android:layout_height="110dp"
-                android:padding="10dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/round_button_grey">
-
-                <TextView
-                    android:id="@+id/tv_card1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#f28f3b"
+                    android:text="Welcome to Goodday."
                     android:textSize="8pt"
-                    android:layout_margin="5dp"
-                    android:text="Today Health Score is"/>
+                    android:padding="10dp"
+                    android:textColor="@color/black"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="May 12, 2022"
-                    android:textColor="@color/black"
-                    android:layout_below="@id/tv_card1"
-                    android:layout_alignEnd="@id/tv_card1"/>
+                <RelativeLayout
+                    android:layout_width="300dp"
+                    android:layout_height="110dp"
+                    android:padding="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_button_grey">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
-                    android:text="90"
-                    android:textStyle="bold"
-                    android:textColor="#588b8b"
-                    android:layout_toRightOf="@id/tv_card1"
-                    android:textSize="18pt"/>
+                    <TextView
+                        android:id="@+id/tv_card1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#f28f3b"
+                        android:textSize="8pt"
+                        android:layout_margin="5dp"
+                        android:text="Today Health Score is"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="May 12, 2022"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/tv_card1"
+                        android:layout_alignEnd="@id/tv_card1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text="90"
+                        android:textStyle="bold"
+                        android:textColor="#588b8b"
+                        android:layout_toRightOf="@id/tv_card1"
+                        android:textSize="18pt"/>
 
 
-            </RelativeLayout>
+                </RelativeLayout>
 
-            <!--com.google.android.material.floatingactionbutton.FloatingActionButton
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end|bottom"
+                android:layout_alignParentEnd="true"
                 android:backgroundTint="#f28f3b"
                 android:src="@drawable/ic_baseline_add_24"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="-40dp"/-->
+                android:layout_marginTop="200dp"/>
 
-        </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/poster_layout"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="#f28f3b"
+                android:src="@drawable/ic_baseline_add_24"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="200dp"/>
+
+        </RelativeLayout>
+
+
+
     </LinearLayout>
+
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

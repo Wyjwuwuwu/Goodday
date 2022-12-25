@@ -351,19 +351,32 @@
                             android:textStyle="bold"
                             android:textSize="8pt"/>
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_baseline_sync_24"/>
-
-                        <TextView
+                        <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="（synchronize）"
-                            android:textSize="5pt"/>
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp">
+
+                            <ImageView
+                                android:id="@+id/img"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_baseline_sync_24"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/img"
+                                android:text="（synchronize）"
+                                android:textSize="5pt"/>
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btn_syn"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#00000000"/>
+                        </RelativeLayout>
 
                     </LinearLayout>
 
@@ -428,12 +441,87 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_gravity="center_vertical"
-                            android:text="Blood Glucose"
+                            android:text="Blood Glucose(Fast)"
                             android:textColor="@color/black"
                             android:textSize="8pt"/>
 
                         <EditText
                             android:id="@+id/et_bG"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textDirection="rtl"
+                            android:layout_gravity="end"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="Blood Glucose(2 hours)"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+                        <EditText
+                            android:id="@+id/et_bGt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textDirection="rtl"
+                            android:layout_gravity="end"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="Glycosylated Hemoglobin"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+                        <EditText
+                            android:id="@+id/et_gly"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textDirection="rtl"
+                            android:layout_gravity="end"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:text="Urine Ket Purity"
+                            android:textColor="@color/black"
+                            android:textSize="8pt"/>
+
+                        <EditText
+                            android:id="@+id/et_ur"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textDirection="rtl"
