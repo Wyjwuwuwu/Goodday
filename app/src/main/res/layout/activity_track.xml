@@ -83,6 +83,7 @@
                         android:textSize="20dp"/>
                 </LinearLayout>
                 <EditText
+                    android:id="@+id/et_fBlood"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -115,6 +116,7 @@
                         android:textSize="20dp"/>
                 </LinearLayout>
                 <EditText
+                    android:id="@+id/et_tBlood"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -146,6 +148,7 @@
                         android:textSize="20dp"/>
                 </LinearLayout>
                 <EditText
+                    android:id="@+id/et_hHemoglobin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -177,6 +180,7 @@
                     android:textSize="20dp"/>
             </LinearLayout>
             <EditText
+                android:id="@+id/et_urine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"

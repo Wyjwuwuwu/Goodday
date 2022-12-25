@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +14,11 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.goodday.user.User
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
 
 
 class ProfileFragment : Fragment() {
@@ -22,6 +26,12 @@ class ProfileFragment : Fragment() {
     lateinit var drawerLayout : DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar
+    lateinit var tv_name: TextView
+    lateinit var uid: String
+    lateinit var user: FirebaseUser
+    lateinit var reference: DatabaseReference
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,11 +39,34 @@ class ProfileFragment : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_profile, container, false)
 
+        user = FirebaseAuth.getInstance().currentUser!!
+        reference = FirebaseDatabase.getInstance().getReference("Users")
+        uid = user.uid
+
         drawerLayout = rootView.findViewById(R.id.drawer_layout)
         navigationView = rootView.findViewById(R.id.nav_view)
         toolbar = rootView.findViewById(R.id.toolbar)
+        tv_name = rootView.findViewById(R.id.fullname_field)
         val btn_setting = rootView.findViewById<AppCompatImageButton>(R.id.btn_setting)
         val btn_notification = rootView.findViewById<AppCompatImageButton>(R.id.btn_notification)
+
+        reference.child(uid).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val userProfile = snapshot.getValue(User::class.java) as User
+
+                if(userProfile != null){
+                    val fullname:String = userProfile.fullName
+                    val email:String = userProfile.email
+
+                    tv_name.text = fullname
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // code here
+            }
+        })
+
 
         //val activity = activity as AppCompatActivity
         //activity.setSupportActionBar(toolbar);
@@ -120,6 +153,7 @@ class ProfileFragment : Fragment() {
         builder.setPositiveButton(
             "Confirm"
         ) { dialog, which ->
+            FirebaseAuth.getInstance().signOut()
             val intent = Intent (activity, OpenInterfaceActivity::class.java)
             activity?.startActivity(intent)
         }
@@ -131,3 +165,4 @@ class ProfileFragment : Fragment() {
     }
 
 }
+

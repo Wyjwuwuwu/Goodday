@@ -1,4 +1,5 @@
 package com.example.goodday
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -6,13 +7,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
+import com.example.goodday.user.User
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 
 
 class HomeFragment : Fragment() {
 
+    lateinit var name:String
+    lateinit var tv_name:TextView
+    lateinit var uid: String
+    lateinit var user: FirebaseUser
+    lateinit var reference: DatabaseReference
+    lateinit var fullname: String
+    lateinit var email: String
+
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,6 +43,33 @@ class HomeFragment : Fragment() {
         val btn_treatment = rootView.findViewById<AppCompatButton>(R.id.btn_treatment)
         val btn_info = rootView.findViewById<AppCompatButton>(R.id.btn_healthInfo)
         val btn_careinfo = rootView.findViewById<AppCompatButton>(R.id.btn_healthcareInfo)
+
+
+        tv_name = rootView.findViewById(R.id.textView)
+
+        user = FirebaseAuth.getInstance().currentUser!!
+        reference = FirebaseDatabase.getInstance().getReference("Users")
+        uid = user.uid
+        var score = 86
+
+        reference.child(uid).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val userProfile = snapshot.getValue(User::class.java) as User
+
+                if (userProfile != null) {
+                    fullname = userProfile.fullName
+                    email = userProfile.email
+                    tv_name.text = "Hello $fullname"
+
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
 
         btn_visualization.setOnClickListener {
             val intent = Intent (activity, VisualizationDashboard::class.java)
@@ -71,9 +113,7 @@ class HomeFragment : Fragment() {
 
 
         circularProgressBar.apply {
-            // Set Progress
-            //progress = 85f
-            // or with animation
+
             setProgressWithAnimation(86f, 1000) // =1s
 
             // Set Progress Max
