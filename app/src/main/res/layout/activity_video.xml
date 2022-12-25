@@ -81,7 +81,7 @@
                 android:textSize="20dp" />
 
             <Spinner
-                android:id="@+id/spinner_view"
+                android:id="@+id/spinner_oritation"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
                 android:textSize="20dp" />
 
             <Spinner
-                android:id="@+id/spinner_latest"
+                android:id="@+id/spinner_size"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
                 android:textSize="20dp" />
 
             <Spinner
-                android:id="@+id/spinner_oritation"
+                android:id="@+id/spinner_locale"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"

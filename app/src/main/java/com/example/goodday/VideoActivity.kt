@@ -120,8 +120,8 @@ class VideoActivity : AppCompatActivity() {
     private fun setSpinner(){
         //spinner
         val spinner_orientation = findViewById<Spinner>(R.id.spinner_oritation)
-        val spinner_size = findViewById<Spinner>(R.id.spinner_view)
-        val spinner_locale = findViewById<Spinner>(R.id.spinner_latest)
+        val spinner_size = findViewById<Spinner>(R.id.spinner_size)
+        val spinner_locale = findViewById<Spinner>(R.id.spinner_locale)
         if (spinner_orientation != null) {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, orientationSelect)
