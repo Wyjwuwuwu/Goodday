@@ -103,57 +103,57 @@ class HealthAlertActivity : AppCompatActivity() {
 
         })
 
-//        reference.child(uid).child(date_p).addListenerForSingleValueEvent(object : ValueEventListener {
-//
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                if(snapshot.exists()){
-//                    val track = snapshot.getValue(HealthTrack::class.java) as HealthTrack
-//
-//                    if (track != null) {
-//                        val fGlucose = track.fGlucose
-//                        val tGlucose = track.tGlucose
-//                        val hemoglobin = track.hemoglobin
-//                        val urine = track.urine
-//
-//                        if (fGlucose != null) {
-//                            if(fGlucose<7.0){
-//                                arrayList2.add("Blood Glucose Level (Fasting state) is Normal")
-//                            }
-//                        }
-//
-//                        if (tGlucose != null) {
-//                            if(tGlucose<11.1){
-//                                arrayList2.add("Blood Glucose Level (2h after meal) is Normal")
-//                            }
-//                        }
-//
-//                        if (hemoglobin != null) {
-//                            if(hemoglobin<6.5){
-//                                arrayList2.add("Glycosylated Hemoglobin is Normal")
-//                            }
-//                        }
-//
-//                        if (urine != null) {
-//                            if(urine<10){
-//                                arrayList2.add("Urine Ket Purity is Normal")
-//                            }
-//                        }
-//
-//                        Log.d("arrayList2", arrayList2.toString())
-//
-//                        val adapter = AlertAdapter(this@HealthAlertActivity, arrayList2)
-//                        listView2.adapter = adapter
-//                    }
-//                }else{
-//                    notice2.visibility = View.VISIBLE
-//                }
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//
-//        })
+        reference.child(uid).child(date_p).addListenerForSingleValueEvent(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    val track = snapshot.getValue(HealthTrack::class.java) as HealthTrack
+
+                    if (track != null) {
+                        val fGlucose = track.fGlucose
+                        val tGlucose = track.tGlucose
+                        val hemoglobin = track.hemoglobin
+                        val urine = track.urine
+
+                        if (fGlucose != null) {
+                            if(fGlucose<7.0){
+                                arrayList2.add("Blood Glucose Level (Fasting state) is Normal")
+                            }
+                        }
+
+                        if (tGlucose != null) {
+                            if(tGlucose<11.1){
+                                arrayList2.add("Blood Glucose Level (2h after meal) is Normal")
+                            }
+                        }
+
+                        if (hemoglobin != null) {
+                            if(hemoglobin<6.5){
+                                arrayList2.add("Glycosylated Hemoglobin is Normal")
+                            }
+                        }
+
+                        if (urine != null) {
+                            if(urine<10){
+                                arrayList2.add("Urine Ket Purity is Normal")
+                            }
+                        }
+
+                        Log.d("arrayList2", arrayList2.toString())
+
+                        val adapter = AlertAdapter(this@HealthAlertActivity, arrayList2)
+                        listView2.adapter = adapter
+                    }
+                }else{
+                    notice2.visibility = View.VISIBLE
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
 
 
@@ -187,9 +187,9 @@ class HealthAlertActivity : AppCompatActivity() {
 //        }
 
 
-//        val back : View = findViewById<ImageButton>(R.id.alert_back)
-//        back.setOnClickListener{
-//            finish()
-//        }
+        val back : View = findViewById<ImageButton>(R.id.btn_back)
+        back.setOnClickListener{
+            finish()
+        }
     }
 }
