@@ -63,7 +63,7 @@ class TrackActivity : AppCompatActivity() {
             var healthScore = 86.0F
 
             healthScore = score(fGlucose,tGlucose,hemoglobin,urine).toFloat()
-            val healthTrack = HealthTrack(uid, healthScore,fGlucose, tGlucose, hemoglobin, urine,healthScore)
+            val healthTrack = HealthTrack(uid, healthScore,fGlucose, tGlucose, hemoglobin, urine)
             FirebaseDatabase.getInstance().reference.child("Health_Track")
                 .child(FirebaseAuth.getInstance().currentUser!!.uid).child(date)
                 .setValue(healthTrack).addOnCompleteListener { task ->

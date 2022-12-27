@@ -10,11 +10,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
+import com.example.goodday.user.HealthTrack
 import com.example.goodday.user.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
+import java.util.*
 
 
 class HomeFragment : Fragment() {
@@ -24,8 +26,10 @@ class HomeFragment : Fragment() {
     lateinit var uid: String
     lateinit var user: FirebaseUser
     lateinit var reference: DatabaseReference
+    lateinit var reference2: DatabaseReference
     lateinit var fullname: String
     lateinit var email: String
+    lateinit var circularProgressBar:CircularProgressBar
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -34,7 +38,7 @@ class HomeFragment : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val circularProgressBar = rootView.findViewById<CircularProgressBar>(R.id.circularProgressBar)
+        circularProgressBar = rootView.findViewById(R.id.circularProgressBar)
         val btn_visualization = rootView.findViewById<AppCompatButton>(R.id.btn_visualization)
         val btn_history = rootView.findViewById<AppCompatButton>(R.id.btn_check)
         val btn_feeling = rootView.findViewById<Button>(R.id.btn_feeling)
@@ -43,14 +47,16 @@ class HomeFragment : Fragment() {
         val btn_treatment = rootView.findViewById<AppCompatButton>(R.id.btn_treatment)
         val btn_info = rootView.findViewById<AppCompatButton>(R.id.btn_healthInfo)
         val btn_careinfo = rootView.findViewById<AppCompatButton>(R.id.btn_healthcareInfo)
+        val tv_healthScore = rootView.findViewById<TextView>(R.id.tv_healthScore)
 
 
         tv_name = rootView.findViewById(R.id.textView)
 
         user = FirebaseAuth.getInstance().currentUser!!
         reference = FirebaseDatabase.getInstance().getReference("Users")
+        reference2 = FirebaseDatabase.getInstance().getReference("Health_Track")
         uid = user.uid
-        var score = 86
+
 
         reference.child(uid).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -65,9 +71,26 @@ class HomeFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
 
+        })
+
+        val date = getdate()
+        reference2.child(uid).child(date).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    val health = snapshot.getValue(HealthTrack::class.java) as HealthTrack
+
+                    if(health != null){
+                        val healthScore = health.healthScore
+                        val score:Float = healthScore!!
+                        tv_healthScore.text = score.toString()
+                        circle(score)
+                    }
+                }
+
+            }
+            override fun onCancelled(error: DatabaseError) {}
         })
 
 
@@ -112,9 +135,16 @@ class HomeFragment : Fragment() {
         }
 
 
+
+
+        // Inflate the layout for this fragment
+        return rootView
+    }
+
+    fun circle(score:Float){
         circularProgressBar.apply {
 
-            setProgressWithAnimation(86f, 1000) // =1s
+            setProgressWithAnimation(score, 1000) // =1s
 
             // Set Progress Max
             progressMax = 100f
@@ -134,10 +164,16 @@ class HomeFragment : Fragment() {
             startAngle = 0f
             progressDirection = CircularProgressBar.ProgressDirection.TO_RIGHT
         }
-        // Inflate the layout for this fragment
-        return rootView
     }
 
+    fun getdate(): String {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val date = "$year-${month + 1}-$day"
 
+        return date
+    }
 
 }

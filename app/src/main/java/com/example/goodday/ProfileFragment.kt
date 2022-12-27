@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.goodday.adapter.CustomAdapter
 import com.example.goodday.poster.CustomDialogFragment
 import com.example.goodday.poster.ItemsViewModel
+import com.example.goodday.user.HealthTrack
 import com.example.goodday.user.User
 import com.example.goodday.user.profile
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -46,6 +47,7 @@ class ProfileFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var reference: DatabaseReference
     lateinit var reference2: DatabaseReference
+    lateinit var reference3: DatabaseReference
     lateinit var arrayList: ArrayList<profile>
 
     var fullname: String = ""
@@ -60,12 +62,14 @@ class ProfileFragment : Fragment() {
         user = FirebaseAuth.getInstance().currentUser!!
         reference = FirebaseDatabase.getInstance().getReference("Users")
         reference2 = FirebaseDatabase.getInstance().getReference("Poster")
+        reference3 = FirebaseDatabase.getInstance().getReference("Health_Track")
         uid = user.uid
 
         drawerLayout = rootView.findViewById(R.id.drawer_layout)
         navigationView = rootView.findViewById(R.id.nav_view)
         toolbar = rootView.findViewById(R.id.toolbar)
         tv_name = rootView.findViewById(R.id.fullname_field)
+        val tv_score = rootView.findViewById<TextView>(R.id.tv_healthScore)
         val btn_setting = rootView.findViewById<AppCompatImageButton>(R.id.btn_setting)
         val btn_notification = rootView.findViewById<AppCompatImageButton>(R.id.btn_notification)
         val btn_add = rootView.findViewById<FloatingActionButton>(R.id.btn_add)
@@ -83,6 +87,22 @@ class ProfileFragment : Fragment() {
                     fullname = userProfile.fullName
                     tv_name.text = fullname
                 }
+            }
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
+        val date = getdate()
+        reference3.child(uid).child(date).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    val health = snapshot.getValue(HealthTrack::class.java) as HealthTrack
+
+                    if(health != null){
+                        val healthScore = health.healthScore
+                        tv_score.text = healthScore.toString()
+                    }
+                }
+
             }
             override fun onCancelled(error: DatabaseError) {}
         })
@@ -207,6 +227,16 @@ class ProfileFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) {}
         })
 
+    }
+
+    fun getdate(): String {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val date = "$year-${month + 1}-$day"
+
+        return date
     }
 }
 

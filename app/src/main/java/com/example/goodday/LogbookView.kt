@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageButton
+import com.example.goodday.user.HealthTrack
 import com.example.goodday.user.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -18,7 +19,9 @@ class LogbookView : AppCompatActivity() {
 
     lateinit var user: FirebaseUser
     lateinit var reference: DatabaseReference
+    lateinit var reference2: DatabaseReference
     lateinit var uid: String
+    lateinit var circularProgressBar: CircularProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +29,13 @@ class LogbookView : AppCompatActivity() {
 
         val btn_track = findViewById<AppCompatButton>(R.id.btn_track)
         val btn_back = findViewById<AppCompatButton>(R.id.btn_back)
-        val circularProgressBar = findViewById<CircularProgressBar>(R.id.circularProgressBar)
+        circularProgressBar = findViewById(R.id.circularProgressBar)
         val tv_show = findViewById<TextView>(R.id.tv_show)
+        val tv_score = findViewById<TextView>(R.id.tv_score)
 
         user = FirebaseAuth.getInstance().currentUser!!
         reference = FirebaseDatabase.getInstance().getReference("Users")
+        reference2 = FirebaseDatabase.getInstance().getReference("Health_Track")
         uid = user.uid
         val calendar = Calendar.getInstance()
         val currentHourIn24Format: Int =calendar.get(Calendar.HOUR_OF_DAY)
@@ -60,6 +65,24 @@ class LogbookView : AppCompatActivity() {
 
         })
 
+        val date = getdate()
+        reference2.child(uid).child(date).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    val health = snapshot.getValue(HealthTrack::class.java) as HealthTrack
+
+                    if(health != null){
+                        val healthScore = health.healthScore
+                        val score:Float = healthScore!!
+                        tv_score.text = score.toString()
+                        circle(score)
+                    }
+                }
+
+            }
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
 
 
         btn_track.setOnClickListener{
@@ -72,6 +95,20 @@ class LogbookView : AppCompatActivity() {
             finish()
         }
 
+
+    }
+
+    fun getdate(): String {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val date = "$year-${month + 1}-$day"
+
+        return date
+    }
+
+    fun circle(score:Float){
         circularProgressBar.apply {
             // Set Progress
             //progress = 85f
@@ -96,5 +133,7 @@ class LogbookView : AppCompatActivity() {
             startAngle = 0f
             progressDirection = CircularProgressBar.ProgressDirection.TO_RIGHT
         }
+
     }
+
 }

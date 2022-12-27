@@ -8,7 +8,6 @@ class HealthTrack {
     var tGlucose : Float? = null
     var hemoglobin  : Float? = null
     var urine  : Float? = null
-    var grade:Float?=null
 
     constructor(){
 
@@ -21,7 +20,6 @@ class HealthTrack {
         tGlucose: Float,
         hemoglobin: Float,
         urine: Float,
-        grade:Float
     ) {
 
         this.uid = uid
@@ -30,6 +28,5 @@ class HealthTrack {
         this.tGlucose = tGlucose
         this.hemoglobin = hemoglobin
         this.urine = urine
-        this.grade = grade
     }
 }

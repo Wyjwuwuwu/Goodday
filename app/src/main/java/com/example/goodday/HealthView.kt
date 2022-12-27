@@ -39,6 +39,8 @@ class HealthView : AppCompatActivity() {
         val btn_treat = findViewById<AppCompatImageButton>(R.id.btn_treat)
         val notice1 = findViewById<TextView>(R.id.tv_no1)
         val notice2 = findViewById<TextView>(R.id.tv_no2)
+        val tv_score1 = findViewById<TextView>(R.id.tv_score1)
+        val tv_score2 = findViewById<TextView>(R.id.tv_score2)
         reference = FirebaseDatabase.getInstance().getReference("Health_Track")
         listView = findViewById(R.id.listview)
         listView2 = findViewById(R.id.listview2)
@@ -62,7 +64,47 @@ class HealthView : AppCompatActivity() {
                         val tGlucose = track.tGlucose
                         val hemoglobin = track.hemoglobin
                         val urine = track.urine
-                        val ipath = R.drawable.circle_green
+                        val score = track.healthScore
+                        var ipath_fGlucose = R.drawable.circle_green
+                        var ipath_tGlucose = R.drawable.circle_green
+                        var ipath_hemoglobin = R.drawable.circle_green
+                        var ipath_urine = R.drawable.circle_green
+
+                        tv_score1.text = "Health Score = $score"
+                        if (fGlucose != null) {
+                            ipath_fGlucose = if (fGlucose <=6.1 ){
+                                R.drawable.circle_green
+                            }else if (fGlucose<=7 && fGlucose>6.1){
+                                R.drawable.circle_ora
+                            }else{
+                                R.drawable.circle_blue
+                            }
+                        }
+                        if (tGlucose != null) {
+                            ipath_tGlucose = if (tGlucose<=7.8){
+                                R.drawable.circle_green
+                            }else if (tGlucose<=11.1 && tGlucose>7.8){
+                                R.drawable.circle_ora
+                            }else{
+                                R.drawable.circle_blue
+                            }
+                        }
+                        if (hemoglobin != null) {
+                            ipath_hemoglobin = if (hemoglobin in 4.0..5.6){
+                                R.drawable.circle_green
+                            }else if (hemoglobin in 5.7..6.4){
+                                R.drawable.circle_ora
+                            }else{
+                                R.drawable.circle_blue
+                            }
+                        }
+                        if (urine != null) {
+                            ipath_urine = if (urine<0.8&&urine>0){
+                                R.drawable.circle_green
+                            }else {
+                                R.drawable.circle_ora
+                            }
+                        }
                         arrayList.add("Blood Glucose Level (Fasting state) is "
                                 + fGlucose.toString()
                                 +" mm Hg "+ date)
@@ -76,10 +118,10 @@ class HealthView : AppCompatActivity() {
                                 + urine.toString()
                                 +" "+ date)
                         Log.d("arrayList", arrayList.toString())
-                        imgList.add(ipath)
-                        imgList.add(ipath)
-                        imgList.add(ipath)
-                        imgList.add(ipath)
+                        imgList.add(ipath_fGlucose)
+                        imgList.add(ipath_tGlucose)
+                        imgList.add(ipath_hemoglobin)
+                        imgList.add(ipath_urine)
                         val adapter = ResultAdapter(this@HealthView, arrayList, imgList)
                         listView.adapter = adapter
                     }
@@ -100,28 +142,67 @@ class HealthView : AppCompatActivity() {
                 val track = snapshot.getValue(HealthTrack::class.java) as HealthTrack
 
                     if (track != null) {
-                        val fGlucose = track.fGlucose
-                        val tGlucose = track.tGlucose
-                        val hemoglobin = track.hemoglobin
-                        val urine = track.urine
-                        val ipath = R.drawable.circle_green
+                        val fGlucose2 = track.fGlucose
+                        val tGlucose2 = track.tGlucose
+                        val hemoglobin2 = track.hemoglobin
+                        val urine2 = track.urine
+                        val score2 = track.healthScore
+                        var ipath_fGlucose2 = R.drawable.circle_green
+                        var ipath_tGlucose2 = R.drawable.circle_green
+                        var ipath_hemoglobin2 = R.drawable.circle_green
+                        var ipath_urine2 = R.drawable.circle_green
+                        tv_score2.text = "Health Score = $score2"
+                        if (fGlucose2 != null) {
+                            ipath_fGlucose2 = if (fGlucose2 <=6.1 ){
+                                R.drawable.circle_green
+                            }else if (fGlucose2<=7 && fGlucose2>6.1){
+                                R.drawable.circle_ora
+                            }else{
+                                R.drawable.circle_blue
+                            }
+                        }
+                        if (tGlucose2 != null) {
+                            ipath_tGlucose2 = if (tGlucose2<=7.8){
+                                R.drawable.circle_green
+                            }else if (tGlucose2<=11.1 && tGlucose2>7.8){
+                                R.drawable.circle_ora
+                            }else{
+                                R.drawable.circle_blue
+                            }
+                        }
+                        if (hemoglobin2 != null) {
+                            ipath_hemoglobin2 = if (hemoglobin2 in 4.0..5.6){
+                                R.drawable.circle_green
+                            }else if (hemoglobin2 in 5.7..6.4){
+                                R.drawable.circle_ora
+                            }else{
+                                R.drawable.circle_blue
+                            }
+                        }
+                        if (urine2 != null) {
+                            ipath_urine2 = if (urine2<0.8&&urine2>0){
+                                R.drawable.circle_green
+                            }else {
+                                R.drawable.circle_ora
+                            }
+                        }
                         arrayList2.add("Blood Glucose Level (Fasting state) is "
-                                + fGlucose.toString()
-                                +" mm Hg "+ date)
+                                + fGlucose2.toString()
+                                +" mm Hg "+ date_p)
                         arrayList2.add("Blood Glucose Level (2 h after meal) is "
-                                + fGlucose.toString()
-                                +" mm Hg "+ date)
+                                + tGlucose2.toString()
+                                +" mm Hg "+ date_p)
                         arrayList2.add("Glycosylated Hemoglobin Value is "
-                                + fGlucose.toString()
-                                +" % "+ date)
+                                + hemoglobin2.toString()
+                                +" % "+ date_p)
                         arrayList2.add("Urine Ket Purity is "
-                                + fGlucose.toString()
-                                +" "+ date)
+                                + urine2.toString()
+                                +" "+ date_p)
                         Log.d("arrayList", arrayList2.toString())
-                        imgList2.add(ipath)
-                        imgList2.add(ipath)
-                        imgList2.add(ipath)
-                        imgList2.add(ipath)
+                        imgList2.add(ipath_fGlucose2)
+                        imgList2.add(ipath_tGlucose2)
+                        imgList2.add(ipath_hemoglobin2)
+                        imgList2.add(ipath_urine2)
                         val adapter = ResultAdapter(this@HealthView, arrayList2, imgList2)
                         listView2.adapter = adapter
                     }

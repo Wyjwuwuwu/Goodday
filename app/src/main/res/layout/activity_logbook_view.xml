@@ -68,10 +68,11 @@
             android:textSize="8pt"/>
 
         <TextView
+            android:id="@+id/tv_score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="86"
+            android:text=""
             android:textSize="10pt"
             android:textColor="@color/black"/>
 
@@ -80,7 +81,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:orientation="vertical">
 
         <TextView
@@ -105,112 +106,112 @@
             android:text="How you feel today? Here is a summary for the last 14 days"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_margin="20dp"
-        android:orientation="vertical"
-        android:background="@drawable/round_button5">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:background="@drawable/round_button5">-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:textColor="@color/black"
-                android:textSize="9pt"
-                android:text="Average"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="9pt"-->
+<!--                android:text="Average"/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/black"
-                android:textSize="10pt"
-                android:text="90"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="10pt"-->
+<!--                android:text="90"/>-->
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/white"
-                android:layout_alignParentBottom="true"/>
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/white"-->
+<!--                android:layout_alignParentBottom="true"/>-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp">
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="10dp">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:text="Lowest score"
-                android:textColor="@color/black"
-                android:textSize="9pt" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:text="Lowest score"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="9pt" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/black"
-                android:textSize="10pt"
-                android:text="82"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="10pt"-->
+<!--                android:text="82"/>-->
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/white"
-                android:layout_alignParentBottom="true"/>
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/white"-->
+<!--                android:layout_alignParentBottom="true"/>-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp">
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginTop="10dp">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:textColor="@color/black"
-                android:textSize="9pt"
-                android:text="Highest score"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="9pt"-->
+<!--                android:text="Highest score"/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/black"
-                android:textSize="10pt"
-                android:text="96"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="10pt"-->
+<!--                android:text="96"/>-->
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/white"
-                android:layout_alignParentBottom="true"/>
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/white"-->
+<!--                android:layout_alignParentBottom="true"/>-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
 
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_track"
@@ -219,6 +220,7 @@
         android:background="@drawable/round_button3"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:textAlignment="center"
         android:text="Tracking Today"
         android:textColor="@color/white"

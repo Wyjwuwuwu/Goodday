@@ -83,68 +83,6 @@
                 android:textColor="#000"
                 android:textSize="20sp" />
 
-            <RelativeLayout
-                android:id="@+id/follow_layout"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="40dp"
-                android:layout_toRightOf="@id/fullname_field">
-
-                <TextView
-                    android:id="@+id/follow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@color/black"
-                    android:text="10"
-                    android:textSize="8pt"/>
-
-                <TextView
-                    android:id="@+id/tv_follow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/follow"
-                    android:text="Follow"
-                    android:textColor="#f5f5f5"/>
-
-            </RelativeLayout>
-
-            <ImageView
-                android:id="@+id/line1"
-                android:layout_width="1dp"
-                android:layout_height="50dp"
-                android:background="#f5f5f5"
-                android:layout_toRightOf="@id/follow_layout"/>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/line1">
-
-                <TextView
-                    android:id="@+id/follower"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@color/black"
-                    android:text="10"
-                    android:textSize="8pt"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_below="@+id/follower"
-                    android:layout_centerHorizontal="true"
-                    android:text="Follower"
-                    android:textColor="#f5f5f5" />
-
-            </RelativeLayout>
-
-
             <TextView
                 android:id="@+id/tv_signature"
                 android:layout_width="wrap_content"
@@ -206,28 +144,8 @@
             <RelativeLayout
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="-20dp"
-                android:background="@drawable/round_button_grey">
 
-                <TextView
-                    android:id="@+id/tv_tracking"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="355"
-                    android:textStyle="bold"
-                    android:textSize="10pt"
-                    android:textColor="#588b8b"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Tracking Days"
-                    android:textColor="@color/black"
-                    android:textSize="6pt"
-                    android:layout_below="@+id/tv_tracking"
-                    android:layout_centerHorizontal="true"/>
+                android:background="@drawable/round_button4">
 
             </RelativeLayout>
 
@@ -380,7 +298,8 @@
                 android:backgroundTint="#f28f3b"
                 android:src="@drawable/ic_baseline_add_24"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="200dp"/>
+                app:fabCustomSize="30dp"
+                android:layout_marginTop="180dp"/>
 
         </RelativeLayout>
 

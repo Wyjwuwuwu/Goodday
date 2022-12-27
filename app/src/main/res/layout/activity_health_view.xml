@@ -66,7 +66,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp">
+            android:layout_height="200dp">
 
             <ImageView
                 android:id="@+id/line_s"
@@ -99,6 +99,20 @@
 
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/tv_score1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="10pt"
+                android:textColor="#588b8b"
+                android:gravity="center"/>
+
+        </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -112,12 +126,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="30dp">
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp">
+            android:layout_height="200dp">
 
             <ListView
                 android:id="@+id/listview2"
@@ -138,6 +151,20 @@
 
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/tv_score2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="10pt"
+                android:textColor="#588b8b"
+                android:gravity="center"/>
+
+        </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -148,8 +175,6 @@
 
     </LinearLayout>
 
-
-
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -159,9 +184,9 @@
 
     <RelativeLayout
             android:layout_width="250dp"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/round_rec_ora">
 
             <ImageView
@@ -180,12 +205,12 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/img1"/>
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btn_treat"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:background="#00000000" />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_treat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#00000000" />
 
         </RelativeLayout>
 
