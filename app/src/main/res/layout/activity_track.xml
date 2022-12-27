@@ -112,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:text="Blood Glucose Level (Fasting state)"
+                        android:text="Blood Glucose Level (2H after meal)"
                         android:textSize="20dp"/>
                 </LinearLayout>
                 <EditText
