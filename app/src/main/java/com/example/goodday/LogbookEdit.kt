@@ -133,6 +133,7 @@ class LogbookEdit : AppCompatActivity() {
         btn_record.setOnClickListener {
             val intent = Intent(this, LogbookUpdate::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

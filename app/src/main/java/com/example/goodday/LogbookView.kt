@@ -65,6 +65,7 @@ class LogbookView : AppCompatActivity() {
         btn_track.setOnClickListener{
             val intent = Intent(this, LogbookEdit::class.java)
             startActivity(intent)
+            finish()
         }
 
         btn_back.setOnClickListener{
