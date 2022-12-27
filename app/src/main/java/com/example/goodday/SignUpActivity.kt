@@ -61,6 +61,13 @@ class SignUpActivity : AppCompatActivity() {
         val back: View = findViewById<ImageButton>(R.id.back_to)
         back.setOnClickListener {
             finish()
+//            val intent: Intent = Intent(
+//                this@SignUpActivity,
+//                LoginActivity::class.java
+//            )
+//
+//            startActivity(intent)
+
         }
 
         // Initialize Firebase Auth
@@ -76,37 +83,64 @@ class SignUpActivity : AppCompatActivity() {
             val username: String = username.text.toString().trim()
             val email: String = email.text.toString().trim()
             val password: String = password.text.toString().trim()
-            Toast.makeText(this, "test1", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "test1", Toast.LENGTH_SHORT).show()
 
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        uid = auth.uid.toString()
-                        Log.d("uid",uid)
-                        val user = User(uid, username, email)
-                        Toast.makeText(this, "test2", Toast.LENGTH_SHORT).show()
-                        FirebaseDatabase.getInstance().reference.child("Users")
-                            .child(FirebaseAuth.getInstance().currentUser!!.uid)
-                            .setValue(user).addOnCompleteListener { task ->
-                                if (task.isSuccessful){
-                                    Toast.makeText(this, "Sign up successfully", Toast.LENGTH_SHORT).show()
-                                }else{
-                                    Toast.makeText(this, "Sign up failed", Toast.LENGTH_SHORT).show()
+            if (username.isEmpty()){
+                Toast.makeText(this, "Please Enter Your Username", Toast.LENGTH_SHORT).show()
+            }
+            if (email.isEmpty()){
+                Toast.makeText(this, "Please Enter Your Email Address", Toast.LENGTH_SHORT).show()
+            }
+            if (password.isEmpty()){
+                Toast.makeText(this, "Please Enter Your Password", Toast.LENGTH_SHORT).show()
+            }
+
+            if (username.isNotEmpty() and email.isNotEmpty() and password.isNotEmpty()) {
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            uid = auth.uid.toString()
+                            Log.d("uid", uid)
+                            val user = User(uid, username, email)
+                            //                        Toast.makeText(this, "test2", Toast.LENGTH_SHORT).show()
+                            FirebaseDatabase.getInstance().reference.child("Users")
+                                .child(FirebaseAuth.getInstance().currentUser!!.uid)
+                                .setValue(user).addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+                                        Toast.makeText(
+                                            this,
+                                            "Sign up successfully",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    } else {
+                                        //Toast.makeText(this, "Sign up failed", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(
+                                            this,
+                                            task.exception!!.message.toString(),
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    }
                                 }
-                            }
 
-                        //explicit intent
-                        val intent: Intent = Intent(
-                            this@SignUpActivity,
-                            LoginActivity::class.java)
+                            //explicit intent
+                            val intent: Intent = Intent(
+                                this@SignUpActivity,
+                                LoginActivity::class.java
+                            )
 
-                        startActivity(intent)
+                            startActivity(intent)
 
-                    }else{
-                        Toast.makeText(this, "test2_failed", Toast.LENGTH_SHORT).show()
+                        } else {
+                            //Toast.makeText(this, "test2_failed", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this,
+                                task.exception!!.message.toString(),
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
                     }
-
-                }
+            }
         }
 
     }

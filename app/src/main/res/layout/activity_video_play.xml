@@ -52,51 +52,29 @@
 
         </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/videoTitle"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/ivVideo"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/pic1"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/author"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="28dp"
-                android:text="www"/>
-            <TextView
-                android:id="@+id/authorlink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prepared for the video components"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"/>
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-
-
-    <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="The Top 10 Most Common Chronic
+Conditions in Older Adults"/>
+    <ImageView
+        android:id="@+id/ivVideo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:src="@drawable/pic1"/>
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:text="Prepared for the video components"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
 
 </LinearLayout>
