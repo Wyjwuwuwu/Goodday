@@ -59,9 +59,11 @@ class TrackActivity : AppCompatActivity() {
             val day = calendar.get(Calendar.DAY_OF_MONTH)
             val date = "$year-${month + 1}-$day"
 
-            val healthScore = 86.0F
 
-            val healthTrack = HealthTrack(uid, healthScore,fGlucose, tGlucose, hemoglobin, urine)
+            var healthScore = 86.0F
+
+            healthScore = score(fGlucose,tGlucose,hemoglobin,urine).toFloat()
+            val healthTrack = HealthTrack(uid, healthScore,fGlucose, tGlucose, hemoglobin, urine,healthScore)
             FirebaseDatabase.getInstance().reference.child("Health_Track")
                 .child(FirebaseAuth.getInstance().currentUser!!.uid).child(date)
                 .setValue(healthTrack).addOnCompleteListener { task ->
@@ -75,6 +77,37 @@ class TrackActivity : AppCompatActivity() {
             val intent = Intent(this@TrackActivity, HealthView::class.java)
             startActivity(intent)
         }
+
+    }
+    fun score(fGlucose:Float,tGlucose:Float,hemoglobin:Float,urine:Float):Int{
+        var grade = 0
+        if(fGlucose<=6.1){
+            grade+=25
+        }else if(fGlucose<=7 &&(fGlucose>6.1)){
+            grade+=15
+        }else if(fGlucose>7){
+            grade+=5
+        }
+        if(tGlucose<=7.8){
+            grade+=25
+        }else if(tGlucose<=11.1 &&(tGlucose>7.8)){
+            grade+=15
+        }else if(tGlucose>11.1){
+            grade+=5
+        }
+        if(hemoglobin<=5.6&&hemoglobin>=4){
+            grade+=25
+        }else if(hemoglobin<=6.4&&hemoglobin>=5.7){
+            grade+=15
+        }else if(tGlucose>6.4){
+            grade+=5
+        }
+        if(urine<0.8&&urine>0){
+            grade+=25
+        }else{
+            grade+=10
+        }
+        return grade
 
     }
 }

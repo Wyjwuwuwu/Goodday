@@ -12,6 +12,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textStyle="bold"
+            android:text="Date:"
+            android:textSize="24dp"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textStyle="bold"
+            android:text="Date:"
+            android:textSize="24dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp">
         <ImageView
             android:id="@+id/symbol_temp"
             android:layout_width="32dp"
@@ -19,10 +38,17 @@
             android:src="@drawable/ic_baseline_analytics_24"/>
         <TextView
             android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature is "
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_marginStart="10dp"
             android:id="@+id/tvIntro_temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Temperature is normal 2022-09-01"
+            android:text="Very High"
+            android:textStyle="bold"
             android:textSize="20dp"/>
     </LinearLayout>
     <LinearLayout
@@ -35,13 +61,27 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_baseline_analytics_24"/>
-        <TextView
-            android:layout_marginStart="10dp"
-            android:id="@+id/tvIntro_blood"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Temperature is normal 2022-09-01"
-            android:textSize="20dp"/>
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The blood glucose level is "
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_marginStart="10dp"
+                android:id="@+id/tvIntro_blood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Normal"
+                android:textSize="20dp"/>
+        </LinearLayout>
+
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,11 +94,18 @@
             android:layout_height="32dp"
             android:src="@drawable/ic_baseline_analytics_24"/>
         <TextView
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feeling "
+            android:textSize="20dp"/>
+        <TextView
             android:id="@+id/tvIntro_shiver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Temperature is normal 2022-09-01"
+            android:text="Very shiver"
+            android:textStyle="bold"
             android:textSize="20dp"/>
     </LinearLayout>
     <LinearLayout
@@ -72,11 +119,18 @@
             android:layout_height="32dp"
             android:src="@drawable/ic_baseline_analytics_24"/>
         <TextView
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The pulse rate is "
+            android:textSize="20dp"/>
+        <TextView
             android:id="@+id/tvIntro_puls"
             android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Temperature is normal 2022-09-01"
+            android:textStyle="bold"
+            android:text="Very fast"
             android:textSize="20dp"/>
     </LinearLayout>
     <LinearLayout
@@ -90,11 +144,18 @@
             android:layout_height="32dp"
             android:src="@drawable/ic_baseline_analytics_24"/>
         <TextView
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feeling"
+            android:textSize="20dp"/>
+        <TextView
             android:id="@+id/tvIntro_pain"
             android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Temperature is normal 2022-09-01"
+            android:textStyle="bold"
+            android:text="Very severe"
             android:textSize="20dp"/>
     </LinearLayout>>
 

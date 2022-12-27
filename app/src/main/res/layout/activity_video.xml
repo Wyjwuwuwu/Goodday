@@ -21,18 +21,33 @@
             android:layout_marginEnd="20dp"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
-        <android.widget.SearchView
-            android:id="@+id/svNewsInfo"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:gravity="right|center_horizontal"
-            android:iconifiedByDefault="true"
             android:layoutDirection="rtl"
-            android:queryHint="Search Here"
-            app:iconifiedByDefault="false"></android.widget.SearchView>
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/ivSearchButtonVideo"
+                android:background="@color/white"
+                android:layout_marginEnd="20dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layoutDirection="ltr"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_baseline_manage_search_24" />
+            <EditText
+                android:id="@+id/svVideoInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layoutDirection="ltr"
+                android:gravity="right|center_horizontal"
+
+                android:queryHint="Search Here"></EditText>
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -62,11 +77,11 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Views"
+                android:text="Orientation"
                 android:textSize="20dp" />
 
             <Spinner
-                android:id="@+id/spinner_view"
+                android:id="@+id/spinner_oritation"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,11 +102,11 @@
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:text="Latest"
+                android:text="Size"
                 android:textSize="20dp" />
 
             <Spinner
-                android:id="@+id/spinner_latest"
+                android:id="@+id/spinner_size"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
@@ -103,24 +118,26 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtView3"
+                android:id="@+id/txtView4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Period"
+                android:layout_height="wrap_content"
+                android:text="locale"
                 android:textSize="20dp" />
 
             <Spinner
-                android:id="@+id/spinner_period"
+                android:id="@+id/spinner_locale"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/txtView1"
                 android:spinnerMode="dialog" />
         </LinearLayout>
+
 
 
     </LinearLayout>
