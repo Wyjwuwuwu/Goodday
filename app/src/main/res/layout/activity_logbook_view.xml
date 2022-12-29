@@ -103,7 +103,7 @@
             android:layout_marginRight="20dp"
             android:textSize="7pt"
             android:textColor="@color/black"
-            android:text="How you feel today? Here is a summary for the last 14 days"/>
+            android:text="How you feel today? Track your health logbook today"/>
     </LinearLayout>
 
 <!--    <LinearLayout-->

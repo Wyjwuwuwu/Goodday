@@ -139,14 +139,14 @@ class HealthView : AppCompatActivity() {
         reference.child(uid).child(date_p).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
-                val track = snapshot.getValue(HealthTrack::class.java) as HealthTrack
+                val track1 = snapshot.getValue(HealthTrack::class.java) as HealthTrack
 
-                    if (track != null) {
-                        val fGlucose2 = track.fGlucose
-                        val tGlucose2 = track.tGlucose
-                        val hemoglobin2 = track.hemoglobin
-                        val urine2 = track.urine
-                        val score2 = track.healthScore
+                    if (track1 != null) {
+                        val fGlucose2 = track1.fGlucose
+                        val tGlucose2 = track1.tGlucose
+                        val hemoglobin2 = track1.hemoglobin
+                        val urine2 = track1.urine
+                        val score2 = track1.healthScore
                         var ipath_fGlucose2 = R.drawable.circle_green
                         var ipath_tGlucose2 = R.drawable.circle_green
                         var ipath_hemoglobin2 = R.drawable.circle_green
@@ -235,7 +235,7 @@ class HealthView : AppCompatActivity() {
             override fun onClick(v: View?) {
                 // Now share text only function will be called
                 // here we  will be passing the text to share
-                shareTextOnly(text.getText().toString())
+                shareTextOnly(tv_score1.getText().toString())
             }
         })
     }

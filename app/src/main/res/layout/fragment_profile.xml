@@ -59,7 +59,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="260dp"
             android:layout_marginTop="-5dp"
             android:background="@drawable/round_button5"
             android:padding="20dp">
@@ -110,26 +110,26 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="100dp"
             android:orientation="horizontal"
-            android:layout_marginTop="-50dp">
+            android:layout_marginTop="-80dp">
 
             <RelativeLayout
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/round_button_grey"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:id="@+id/tv_healthScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="86"
+                    android:text=""
                     android:textStyle="bold"
                     android:textSize="10pt"
                     android:textColor="#588b8b"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -141,13 +141,7 @@
                     android:layout_centerHorizontal="true"/>
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
 
-                android:background="@drawable/round_button4">
-
-            </RelativeLayout>
 
         </LinearLayout>
 
@@ -158,19 +152,13 @@
             android:layout_marginTop="-50dp">
 
             <RelativeLayout
-                android:layout_width="220dp"
+                android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/round_button_white">
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="220dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="-20dp"
-                android:background="@drawable/round_button_white">
 
-            </RelativeLayout>
         </LinearLayout>
 
         <RelativeLayout

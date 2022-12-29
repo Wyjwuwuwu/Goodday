@@ -42,7 +42,6 @@ class DialogFragment : DialogFragment() {
         val date = Calendar.getInstance().time.toString()
 
         btn_post.setOnClickListener{
-            Toast.makeText(activity, "test1", Toast.LENGTH_SHORT).show()
             val input = mInput.text.toString()
             mOnInputListener.sendInput(input,date)
         }
