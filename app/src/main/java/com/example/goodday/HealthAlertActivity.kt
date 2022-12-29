@@ -103,7 +103,7 @@ class HealthAlertActivity : AppCompatActivity() {
 
         })
 
-        reference.child(uid).child(date_p).addListenerForSingleValueEvent(object : ValueEventListener {
+        reference.child(uid).child(date).addListenerForSingleValueEvent(object : ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
