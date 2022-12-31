@@ -4,19 +4,36 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
+import com.example.goodday.adapter.AlertAdapter
+import com.example.goodday.adapter.ResultAdapter
+import com.example.goodday.user.HealthTrack
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
+import java.util.*
 
 class HealthAlertActivity : AppCompatActivity() {
+
+    lateinit var user: FirebaseUser
+    lateinit var reference: DatabaseReference
+    lateinit var listView: ListView
+    lateinit var listView2: ListView
+
+    val arrayList = ArrayList<String>()
+    val arrayList2 = ArrayList<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_health_alert)
 
-<<<<<<< HEAD
         val notice1 = findViewById<TextView>(R.id.tv_no1)
         val notice2 = findViewById<TextView>(R.id.tv_no2)
         reference = FirebaseDatabase.getInstance().getReference("Health_Track")
@@ -142,8 +159,6 @@ class HealthAlertActivity : AppCompatActivity() {
 
 
 
-=======
->>>>>>> parent of c267efa (Merge branch 'hyx')
         //hide action bar
         if (supportActionBar != null) {
             supportActionBar!!.hide()
@@ -172,7 +187,7 @@ class HealthAlertActivity : AppCompatActivity() {
 //        }
 
 
-        val back : View = findViewById<ImageButton>(R.id.alert_back)
+        val back : View = findViewById<ImageButton>(R.id.btn_back)
         back.setOnClickListener{
             finish()
         }
