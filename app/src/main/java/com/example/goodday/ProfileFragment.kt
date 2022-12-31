@@ -174,10 +174,10 @@ class ProfileFragment : Fragment() {
             activity?.startActivity(intent)
         }
 
-//        btn_notification.setOnClickListener{
-//            val intent = Intent (activity, HealthAlertActivity::class.java)
-//            activity?.startActivity(intent)
-//        }
+        btn_notification.setOnClickListener{
+            val intent = Intent (activity, HealthAlertActivity::class.java)
+            activity?.startActivity(intent)
+        }
 
         btn_add.setOnClickListener{
             val dialog = com.example.goodday.poster.DialogFragment()

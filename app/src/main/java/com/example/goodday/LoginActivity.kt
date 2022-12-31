@@ -85,19 +85,31 @@ class LoginActivity : AppCompatActivity() {
         val email: String = email.text.toString().trim()
         val password: String = password.text.toString().trim()
 
-        mAuth.signInWithEmailAndPassword(email,password)
-            .addOnCompleteListener{ task ->
-                if(task.isSuccessful){
-                    //explicit intent
-                    val intent: Intent = Intent(
-                        this@LoginActivity,
-                        MainActivity::class.java)
+        if (email.isEmpty()){
+            Toast.makeText(this, "Please Enter Your Email Address", Toast.LENGTH_SHORT).show()
+        }
+        if (password.isEmpty()){
+            Toast.makeText(this, "Please Enter Your Password", Toast.LENGTH_SHORT).show()
+        }
 
-                    startActivity(intent)
-                }else{
-                    Toast.makeText(this, "login failed", Toast.LENGTH_SHORT).show()
+        if (email.isNotEmpty() and password.isNotEmpty()) {
+            mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        //explicit intent
+                        val intent: Intent = Intent(
+                            this@LoginActivity,
+                            MainActivity::class.java
+                        )
+
+                        startActivity(intent)
+                    } else {
+                        //Toast.makeText(this, "login failed", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, task.exception!!.message.toString(), Toast.LENGTH_LONG)
+                            .show()
+                    }
                 }
-            }
+        }
     }
 
 
